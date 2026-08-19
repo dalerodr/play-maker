@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
 interface TabNavigationProps {
-    activeTab: 'actions' | 'teams' | 'summary';
-    onTabChange: (tab: 'actions' | 'teams' | 'summary') => void;
+    activeTab: 'actions' | 'summary';
+    onTabChange: (tab: 'actions' | 'summary') => void;
     position?: 'top' | 'bottom';
 }
 
@@ -13,21 +13,20 @@ export const TabNavigation: FC<TabNavigationProps> = ({
 }) => {
     const tabs = [
         { id: 'actions' as const, label: 'Acciones' },
-        { id: 'teams' as const, label: 'Editar Equipos' },
         { id: 'summary' as const, label: 'Resumen' },
     ];
 
     return (
-        <div className={`flex border-b bg-white rounded-lg shadow-lg overflow-hidden ${position === 'top' ? 'mb-4' : 'mt-4'}`}>
+        <div className={`inline-flex rounded-xl overflow-hidden border border-white/10 shadow-premium ${position === 'top' ? 'mb-3' : 'mt-3'}`}>
             {tabs.map((tab) => (
                 <button
                     key={tab.id}
                     onClick={() => onTabChange(tab.id)}
-                    className={`flex-1 py-2 px-3 font-bold text-sm transition border-b-4
-                        ${activeTab === tab.id
-                            ? 'bg-[#CE1141] text-white border-[#000]'
-                            : 'bg-gray-100 text-[#222] border-transparent hover:bg-[#F5E6C8] hover:text-[#CE1141]'
-                        }`}
+                    className={`px-5 py-2 font-bold text-xs sm:text-sm transition-all duration-200 ${
+                        activeTab === tab.id
+                            ? 'bg-bulls-red text-white shadow-glow-red'
+                            : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white'
+                    }`}
                 >
                     {tab.label}
                 </button>

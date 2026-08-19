@@ -1,240 +1,96 @@
-#!/bin/bash
 # Guía de Ejemplos - Basketball Stats Tracker
 
-## 📋 Ejemplos de Uso Práctico
+## Ejemplos de Uso Práctico
 
 ### Escenario 1: Primer Cuarto - Local vs Visitante
 
 **Tiempo**: 0:00 - Comienza el partido
-- **Acción 1**: Local #5 (Pívot) anota 2 puntos
-- **Acción 2**: Visitante #3 (Alero) anota 3 puntos
-- **Acción 3**: Local #1 (Base) hace falta
-- **Acción 4**: Local #5 coge rebote
 
-**Resultado esperado**:
-- Local: 2 puntos
-- Visitante: 3 puntos
-- Local: 1 falta
-- Evento log muestra 4 eventos en orden inverso
+1. Selecciona #5 (Pívot) del equipo Local
+2. Presiona **+2** → Local: 2 puntos
+3. Selecciona #3 (Alero) del equipo Visitante
+4. Presiona **+3** → Visitante: 3 puntos
+5. Selecciona #1 (Base) del Local
+6. Presiona **Falta** → Local: 1 falta
+7. Selecciona #5 del Local
+8. Presiona **Rebote** → Local: 1 rebote
 
----
-
-### Escenario 2: Cambio de Jugador
-
-**Situación**: Es momento de hacer cambios en el cuarto 2
-
-**Pasos**:
-1. Ve a la sección "Cambios" (derecha)
-2. Haz clic en jugador en banca para meterlo (se pone verde)
-3. Haz clic en jugador en campo para sacarlo (se pone gris)
-4. Máximo 5 jugadores por equipo en campo
-
-**Código en la app**:
-```javascript
-const handleToggleOnField = (playerId: string) => {
-  const teamOnField = Object.entries(onField)
-    .filter(([id]) => ... && onField[id])
-    .length;
-  
-  if (onField[playerId]) {
-    setOnField(prev => ({ ...prev, [playerId]: false }));
-  } else if (teamOnField < 5) {
-    setOnField(prev => ({ ...prev, [playerId]: true }));
-  }
-};
-```
+**Resultado**: Local 2 - Visitante 3
 
 ---
 
-### Escenario 3: Cronómetro - Parar y Editar
+### Escenario 2: Robo y Asistencia
 
-**Situación**: El árbitro paró el juego en minuto 7:34
-
-**Pasos**:
-1. Haz clic en "⏸ Pausar" para parar el cronómetro
-2. Haz clic en "✎ Editar" para entrar en modo edición
-3. Cambia el minuto a 7 y segundo a 34
-4. Haz clic en "✓ Guardar"
-
-**Hook TypeScript**:
-```typescript
-const setTimeManually = (minute: number, second: number) => {
-  setTimer((prev) => ({
-    ...prev,
-    minute: Math.max(0, Math.min(10, minute)),
-    second: Math.max(0, Math.min(59, second)),
-  }));
-};
-```
+1. Selecciona #2 (Escolta) del Local
+2. Presiona **Robo** → Local: 1 robo
+3. Selecciona #1 (Base) del Local
+4. Presiona **Ast.** → Local: 1 asistencia
 
 ---
 
-### Escenario 4: Registro de Asistencia
+### Escenario 3: Falta Técnica y Expulsión
 
-**Situación**: Local #2 hace pase, Local #4 anota
-
-**Pasos**:
-1. Selecciona equipo "Local"
-2. Haz clic en #2 (Escolta)
-3. Haz clic en botón "Asistencia"
-4. Evento registrado: "Q1 - 05:23 - #2 Escolta - Asistencia"
-
-**Resultado en JSON**:
-```json
-{
-  "timestamp": "Minuto 5 Cuarto 1",
-  "quarter": 1,
-  "minute": 5,
-  "second": 23,
-  "playerId": "home-1",
-  "playerName": "Escolta",
-  "playerNumber": 2,
-  "team": "home",
-  "action": "assist"
-}
-```
+1. Selecciona #4 (Ala-Pívot) del Visitante
+2. Presiona **Técnica** → 1 falta técnica
+3. Presiona **Técnica** de nuevo → 2 faltas técnicas
+4. **Se abre modal de expulsión automáticamente**
+5. Selecciona un reserva del banquillo para sustituir
 
 ---
 
-### Escenario 5: Cambio de Cuarto
+### Escenario 4: Cambio de Jugador
 
-**Situación**: Termina el cuarto 1, comienza el 2
+1. Presiona el botón **🔁 Cambios**
+2. Se abre el modal con ambos equipos
+3. En "Local": presiona **○ BANCA** en un reserva → entra a cancha
+4. Presiona **● CANCHA** en un titular → sale a banca
+5. Presiona **Cerrar**
 
-**Pasos**:
-1. Haz clic en "Siguiente →" en la sección del cronómetro
-2. El contador debe estar en 0:00
-3. Haz clic en "↻ Reiniciar" para volver a 10:00
-4. Haz clic en "▶ Iniciar" para comenzar el cuarto 2
-
-**Resultado**:
-- Cronómetro: 10:00
-- Contador: "Cuarto 2/4"
-- Eventos ahora se registran con "Cuarto 2"
+**Regla**: Máximo 5 por equipo en cancha.
 
 ---
 
-### Escenario 6: Descarga de Estadísticas
+### Escenario 5: Editar Equipos
 
-**Final del Partido**:
-1. Haz clic en "📥 Descargar Estadísticas"
-2. Se descarga archivo: `basket-stats-1731234567890.json`
-3. Archivo contiene:
-   - Fecha y hora del partido
-   - Stats finales de ambos equipos
-   - Listado de todos los jugadores
-   - Historial completo de eventos
-
-**Ejemplo de archivo descargado**:
-```json
-{
-  "gameDate": "2025-11-11T14:30:00.000Z",
-  "finalStats": {
-    "home": {
-      "totalPoints": 78,
-      "totalFouls": 15,
-      "field2Points": 28,
-      "field3Points": 6,
-      "totalRebounds": 45,
-      "totalAssists": 18,
-      "players": [
-        {
-          "id": "home-0",
-          "number": 1,
-          "name": "Base",
-          "team": "home",
-          "points2": 6,
-          "points3": 2,
-          "fouls": 2,
-          "rebounds": 3,
-          "assists": 8
-        },
-        // ... más jugadores
-      ]
-    },
-    "away": { /* similar */ }
-  },
-  "events": [
-    {
-      "timestamp": "Minuto 5 Cuarto 1",
-      "quarter": 1,
-      "minute": 5,
-      "second": 23,
-      "playerId": "home-0",
-      "playerName": "Base",
-      "playerNumber": 1,
-      "team": "home",
-      "action": "points2",
-      "teamStats": {
-        "totalPoints": 2,
-        "totalFouls": 0,
-        "field2Points": 1,
-        "field3Points": 0,
-        "totalRebounds": 0,
-        "totalAssists": 0
-      }
-    },
-    // ... todos los eventos
-  ]
-}
-```
+1. Presiona **👥 Editar Equipos**
+2. Se abre el modal con ambos equipos
+3. Haz clic en un jugador → se abren campos de edición
+4. Cambia nombre o número
+5. Presiona **✓ Guardar**
+6. Para cambiar nombre del equipo: presiona **✎ Editar nombre**
 
 ---
 
-## 🔧 Casos de Uso Avanzados
+### Escenario 6: Deshacer Acción
 
-### Correción de Errores
-
-**Problema**: Marcaste 3 puntos pero fueron 2
-
-**Solución**:
-1. No hay botón deshacer (limitación actual)
-2. Opciones:
-   - Editar manualmente el JSON descargado
-   - Reiniciar con "🔄 Nuevo Partido"
-   - Continuar rastreando (la app sigue funcionando)
-
-### Múltiples Partidos en un Día
-
-**Workflow**:
-1. Completa el primer partido
-2. Descarga estadísticas
-3. Haz clic en "🔄 Nuevo Partido"
-4. Comienza a rastrear el segundo partido
-5. Descarga nuevamente
-
-### Análisis de Datos
-
-**Con el JSON descargado, puedes**:
-```javascript
-// Calcular promedio de puntos por jugador
-const avgPoints = events
-  .filter(e => e.playerId === 'home-0')
-  .filter(e => e.action.includes('points'))
-  .length;
-
-// Ver eventos de un jugador específico
-const playerEvents = events.filter(e => e.playerNumber === 5);
-
-// Calcular porcentaje de faltas por equipo
-const totalFouls = events.filter(e => e.team === 'home' && e.action === 'foul').length;
-```
-
-### Sincronización Manual (Cloud)
-
-```javascript
-// Guardar en Dropbox/Google Drive
-const json = JSON.stringify(exportData);
-fetch('https://tu-api.com/upload', {
-  method: 'POST',
-  body: json
-});
-```
+1. Selecciona #3 del Local y presiona **+3** (error, era +2)
+2. Presiona **↶ Deshacer**
+3. La última acción se revierte
+4. Selecciona #3 del Local de nuevo
+5. Presiona **+2** (acción correcta)
 
 ---
 
-## 📊 Ejemplo de Sesión Completa
+### Escenario 7: Cambio de Cuarto
 
-### Local vs Visitante - Primer Cuarto
+1. El cronómetro llega a 0:00
+2. Presiona **Siguiente →** → Cuarto 2
+3. Presiona **↻ Reiniciar** → Vuelve a 10:00
+4. Presiona **▶ Iniciar** → Comienza el cuarto 2
+
+---
+
+### Escenario 8: Exportar y Nuevo Partido
+
+1. Al finalizar el partido, presiona **📥 Descargar**
+2. Se descarga `basket-stats-[timestamp].json`
+3. Presiona **🔄 Nuevo Partido**
+4. Todo se resetea (estadísticas, eventos, tiempo)
+5. Los nombres de jugadores se mantienen
+
+---
+
+## Ejemplo de Sesión Completa
 
 ```
 00:00 - Local #5 (Pívot): +2 Puntos
@@ -244,7 +100,7 @@ fetch('https://tu-api.com/upload', {
         Local: 2 | Visitante: 3
 
 01:30 - Local #1 (Base): Falta
-        Local: 1 Falta | Visitante: 0 Faltas
+        Local: 1 Falta | Visitante: 0
 
 02:15 - Local #5 (Pívot): Rebote
         Local Rebotes: 1
@@ -258,120 +114,45 @@ fetch('https://tu-api.com/upload', {
 04:00 - Local #5 (Pívot): +2 Puntos
         Local: 4 | Visitante: 6
 
-04:45 - Local #4 (Ala-Pívot): Falta
-        Local: 2 Faltas | Visitante: 0 Faltas
-```
-
-### Resumen del Cuarto 1
-
-**Local**:
-- Puntos: 4 (2x2 puntos)
-- Faltas: 2
-- Rebotes: 1
-- Asistencias: 1
-
-**Visitante**:
-- Puntos: 6 (2x3 puntos)
-- Faltas: 0
-- Rebotes: 0
-- Asistencias: 0
-
----
-
-## 🎯 Tips para Máximo Rendimiento
-
-### 1. Preparación Previa
-```bash
-# Personaliza los nombres ANTES de comenzar
-# Edita src/config/playersConfig.ts
-
-# Prueba la app
-npm run dev
-
-# Verifica que se ve bien
-```
-
-### 2. Durante el Partido
-```
-✓ Pausa el cronómetro durante cambios
-✓ Revisa el historial ocasionalmente
-✓ Usa "Editar" si hay confusión con el tiempo
-✓ Mantén el navegador en pantalla completa
-```
-
-### 3. Después del Partido
-```
-✓ Descarga las estadísticas inmediatamente
-✓ Guarda el JSON en un lugar seguro
-✓ Opcional: Imprime o envía por email
-✓ Comienza el siguiente partido con "Nuevo Partido"
+04:30 - Local #2 (Escolta): Robo
+        Local Robos: 1
 ```
 
 ---
 
-## 📱 Responsive Design
+## Datos por Evento (JSON)
 
-La app es completamente responsiva:
-
-```
-Desktop (lg):  3 columnas = Mejor UX
-Tablet (md):   2 columnas = Bueno
-Móvil (sm):    1 columna = Funcional
-```
-
-**Puntos de quiebre Tailwind**:
-- `sm`: 640px
-- `md`: 768px
-- `lg`: 1024px
-
----
-
-## 🚀 Optimizaciones Posibles
-
-Si necesitas mejorar la app:
-
-```typescript
-// 1. Agregar localStorage para guardar automáticamente
-useEffect(() => {
-  localStorage.setItem('gameState', JSON.stringify({
-    players, events, currentQuarter
-  }));
-}, [players, events, currentQuarter]);
-
-// 2. Agregar undo/redo
-const [history, setHistory] = useState([]);
-const undo = () => {
-  setPlayers(history[history.length - 2]);
-};
-
-// 3. Agregar análisis en tiempo real
-const calculateStats = () => {
-  return {
-    bestPlayer: /* ... */,
-    fieldGoalPercentage: /* ... */,
-  };
-};
+```json
+{
+  "timestamp": "Minuto 5 Cuarto 1",
+  "quarter": 1,
+  "minute": 5,
+  "second": 23,
+  "playerId": "home-1",
+  "playerName": "Escolta",
+  "playerNumber": 2,
+  "team": "home",
+  "action": "steal",
+  "teamStats": {
+    "totalPoints": 4,
+    "totalFouls": 1,
+    "field1Points": 0,
+    "field2Points": 2,
+    "field3Points": 0,
+    "totalRebounds": 1,
+    "totalAssists": 1,
+    "totalSteals": 1,
+    "totalTurnovers": 0
+  }
+}
 ```
 
 ---
 
-## ✅ Checklist Final
+## Tips
 
-Antes de usar en un partido real:
-
-- [ ] Node.js instalado
-- [ ] `npm install` ejecutado
-- [ ] Nombres de jugadores personalizados
-- [ ] `npm run dev` ejecutado exitosamente
-- [ ] App visible en http://localhost:3000
-- [ ] Todos los botones funcionan
-- [ ] El cronómetro cuenta regresivo
-- [ ] Puedes seleccionar jugadores
-- [ ] Puedes registrar acciones
-- [ ] Puedes hacer cambios
-- [ ] El historial muestra eventos
-- [ ] Puedes descargar JSON
-
----
-
-¡Ahora estás listo para rastrear baloncesto! 🏀🚀
+1. **Selecciona jugador primero** → Los botones de acción se deshabilitan sin selección
+2. **Jugador debe estar en canca** → No se pueden registrar acciones desde banca
+3. **Usa Deshacer** → Más rápido que corregir manualmente
+4. **Exporta periódicamente** → No pierdas datos
+5. **Revisa el historial** → Verifica que todo se registró correctamente

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 interface ActionButtonsProps {
     selectedPlayerId: string | null;
@@ -8,7 +8,7 @@ interface ActionButtonsProps {
     columns?: number;
 }
 
-export const ActionButtons: FC<ActionButtonsProps> = ({
+export const ActionButtons: FC<ActionButtonsProps> = memo(({
     selectedPlayerId,
     onAction,
     isPlayerOnField,
@@ -17,90 +17,53 @@ export const ActionButtons: FC<ActionButtonsProps> = ({
 }) => {
     const isDisabled = !selectedPlayerId || !isPlayerOnField;
 
-    // Always show Bulls colors, never gray/disabled
-    // Use smaller buttons if size === 'sm'
     const btnBase = size === 'sm'
-        ? 'py-1 px-1 rounded text-2xs font-bold border-2 flex-1'
-        : 'py-3 px-3 rounded-lg text-lg font-bold border-2';
+        ? 'py-1.5 px-1 sm:py-2 sm:px-2 rounded-lg text-[10px] sm:text-xs font-bold border flex-1 min-h-[36px] sm:min-h-[40px]'
+        : 'py-2.5 px-3 rounded-lg text-sm font-bold border-2';
 
-    const gridCols = columns === 2 ? 'grid-cols-2' : 'grid-cols-3';
+    const gridCols = columns === 2 ? 'grid-cols-2' : columns === 4 ? 'grid-cols-5' : 'grid-cols-3';
+
+    const buttons = [
+        { action: 'points1', label: '+1', color: 'bg-bulls-red hover:bg-bulls-red-dark text-white border-bulls-red-dark shadow-glow-red' },
+        { action: 'points2', label: '+2', color: 'bg-bulls-red hover:bg-bulls-red-dark text-white border-bulls-red-dark shadow-glow-red' },
+        { action: 'points3', label: '+3', color: 'bg-bulls-red hover:bg-bulls-red-dark text-white border-bulls-red-dark shadow-glow-red' },
+        { action: 'foul', label: 'Falta', color: 'bg-amber-600/90 hover:bg-amber-600 text-white border-amber-500/30' },
+        { action: 'technical_foul', label: 'Técnica', color: 'bg-amber-700/90 hover:bg-amber-700 text-white border-amber-600/30' },
+        { action: 'unsporting_foul', label: 'Anti.', color: 'bg-red-700/90 hover:bg-red-700 text-white border-red-600/30' },
+        { action: 'rebound', label: 'Rebote', color: 'bg-white/10 hover:bg-white/15 text-white border-white/20' },
+        { action: 'assist', label: 'Ast.', color: 'bg-bulls-neon/90 hover:bg-bulls-neon text-bulls-black border-bulls-neon/30' },
+        { action: 'steal', label: 'Robo', color: 'bg-purple-600/90 hover:bg-purple-600 text-white border-purple-500/30' },
+        { action: 'turnover', label: 'Pérd.', color: 'bg-orange-600/90 hover:bg-orange-600 text-white border-orange-500/30' },
+    ];
 
     return (
-        <div className="space-y-2 h-full flex flex-col">
-            <div className={`grid ${gridCols} gap-1 flex-1`}>
-                <button
-                    onClick={() => onAction('points1')}
-                    disabled={isDisabled}
-                    className={`bg-[#CE1141] hover:bg-[#a70d2a] text-white ${btnBase} transition border-[#222] ${isDisabled ? 'opacity-60 cursor-not-allowed' : ''}`}
-                >
-                    +1
-                </button>
-                <button
-                    onClick={() => onAction('points2')}
-                    disabled={isDisabled}
-                    className={`bg-[#CE1141] hover:bg-[#a70d2a] text-white ${btnBase} transition border-[#222] ${isDisabled ? 'opacity-60 cursor-not-allowed' : ''}`}
-                >
-                    +2
-                </button>
-                <button
-                    onClick={() => onAction('points3')}
-                    disabled={isDisabled}
-                    className={`bg-[#CE1141] hover:bg-[#a70d2a] text-white ${btnBase} transition border-[#222] ${isDisabled ? 'opacity-60 cursor-not-allowed' : ''}`}
-                >
-                    +3
-                </button>
-
-                <button
-                    onClick={() => onAction('foul')}
-                    disabled={isDisabled}
-                    className={`bg-[#222] hover:bg-[#000] text-white ${btnBase} transition border-[#CE1141] ${isDisabled ? 'opacity-60 cursor-not-allowed' : ''}`}
-                >
-                    Falta
-                </button>
-                <button
-                    onClick={() => onAction('technical_foul')}
-                    disabled={isDisabled}
-                    className={`bg-[#222] hover:bg-[#000] text-white ${btnBase} transition border-[#CE1141] ${isDisabled ? 'opacity-60 cursor-not-allowed' : ''}`}
-                >
-                    Técnica
-                </button>
-                <button
-                    onClick={() => onAction('unsporting_foul')}
-                    disabled={isDisabled}
-                    className={`bg-[#222] hover:bg-[#000] text-white ${btnBase} transition border-[#CE1141] ${isDisabled ? 'opacity-60 cursor-not-allowed' : ''}`}
-                >
-                    Anti.
-                </button>
-
-                <button
-                    onClick={() => onAction('rebound')}
-                    disabled={isDisabled}
-                    className={`bg-white hover:bg-gray-50 text-[#CE1141] ${btnBase} transition border-[#CE1141] ${isDisabled ? 'opacity-60 cursor-not-allowed' : ''}`}
-                >
-                    Rebote
-                </button>
-                <button
-                    onClick={() => onAction('assist')}
-                    disabled={isDisabled}
-                    className={`bg-[#39FF14] hover:bg-[#2ed90e] text-[#222] ${btnBase} transition border-[#222] ${isDisabled ? 'opacity-60 cursor-not-allowed' : ''}`}
-                >
-                    Ast.
-                </button>
-                <button
-                    onClick={() => onAction('steal')}
-                    disabled={isDisabled}
-                    className={`bg-purple-500 hover:bg-purple-600 text-white ${btnBase} transition border-[#222] ${isDisabled ? 'opacity-60 cursor-not-allowed' : ''}`}
-                >
-                    Robo
-                </button>
-                <button
-                    onClick={() => onAction('turnover')}
-                    disabled={isDisabled}
-                    className={`bg-orange-500 hover:bg-orange-600 text-white ${btnBase} transition border-[#222] ${isDisabled ? 'opacity-60 cursor-not-allowed' : ''}`}
-                >
-                    Pérdida
-                </button>
+        <div className="h-full flex flex-col">
+            <div className={`grid ${gridCols} gap-1 flex-1 content-start`}>
+                {buttons.map(({ action, label, color }) => (
+                    <button
+                        key={action}
+                        onClick={() => onAction(action)}
+                        disabled={isDisabled}
+                        className={`${btnBase} ${color} transition-all duration-150 select-none active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-transparent`}
+                        aria-label={
+                            action === 'points1' ? 'Marcar 1 punto' :
+                            action === 'points2' ? 'Marcar 2 puntos' :
+                            action === 'points3' ? 'Marcar 3 puntos' :
+                            action === 'foul' ? 'Marcar falta' :
+                            action === 'technical_foul' ? 'Marcar falta técnica' :
+                            action === 'unsporting_foul' ? 'Marcar falta antideportiva' :
+                            action === 'rebound' ? 'Marcar rebote' :
+                            action === 'assist' ? 'Marcar asistencia' :
+                            action === 'steal' ? 'Marcar robo' :
+                            'Marcar pérdida'
+                        }
+                    >
+                        {label}
+                    </button>
+                ))}
             </div>
         </div>
     );
-};
+});
+
+ActionButtons.displayName = 'ActionButtons';

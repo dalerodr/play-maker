@@ -1,117 +1,101 @@
-/* App Styles */
-.App {
-    text-align: center;
-}
-
-/* Smooth transitions */
-* {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-}
-
-button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-/* Scrollbar styling */
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-/* App background: red -> black -> white with optional Bulls logo watermark */
+/* App Background */
 .app-bg {
     position: relative;
     min-height: 100vh;
-    background: linear-gradient(180deg, #CE1141 0%, #111 60%, #ffffff 100%);
+    background: linear-gradient(180deg, #0a0a0a 0%, #111 40%, #1a0a0f 70%, #0a0a0a 100%);
     overflow: hidden;
 }
 
+/* Bulls background image - very subtle */
 .app-bg::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('/bulls-bg.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 60% auto;
-    opacity: 0.06;
-    /* subtle watermark */
+    background: url('/bulls-bg.png') center 30% / 50% auto no-repeat;
+    opacity: 0.04;
     pointer-events: none;
 }
 
-/* Section title helper to increase contrast over the background */
-.section-title {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.92);
-    color: #111;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.375rem;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+/* Gradient overlays */
+.app-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(ellipse at 20% 0%, rgba(206, 17, 65, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 0%, rgba(206, 17, 65, 0.1) 0%, transparent 50%);
+    pointer-events: none;
 }
 
-.section-subtle {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.86);
-    color: #222;
-    padding: 0.125rem 0.4rem;
-    border-radius: 0.375rem;
-    font-weight: 700;
+/* Glass Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-/* App background: red -> black -> white with optional Bulls logo watermark
-   Place a bulls logo image at public/bulls-bg.png to enable background watermark
-*/
-.app-bg {
+/* Premium Button */
+.btn-premium {
     position: relative;
-    background: linear-gradient(180deg, #CE1141 0%, #111 55%, #ffffff 100%);
     overflow: hidden;
+    transition: all 0.2s ease;
 }
 
-.app-bg::before {
+.btn-premium::before {
     content: '';
     position: absolute;
-    inset: 0;
-    background-image: url('/bulls-bg.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    opacity: 0.06;
-    /* subtle watermark */
-    pointer-events: none;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
 }
 
-/* Section title helper to increase contrast over the background */
+.btn-premium:hover::before {
+    left: 100%;
+}
+
+/* Score pulse animation */
+@keyframes scorePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.score-pulse {
+    animation: scorePulse 0.3s ease-in-out;
+}
+
+/* Player card hover */
+.player-card {
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.player-card:hover {
+    border-color: rgba(206, 17, 65, 0.3);
+    box-shadow: 0 0 15px rgba(206, 17, 65, 0.1);
+}
+
+.player-card.selected {
+    border-color: rgba(206, 17, 65, 0.5);
+    background: rgba(206, 17, 65, 0.1);
+    box-shadow: 0 0 20px rgba(206, 17, 65, 0.2);
+}
+
+/* Section title */
 .section-title {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.92);
-    color: #111;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.375rem;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .section-subtle {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.86);
-    color: #222;
-    padding: 0.125rem 0.4rem;
-    border-radius: 0.375rem;
-    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }

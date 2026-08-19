@@ -1,47 +1,38 @@
-# 🏀 Basketball Stats Tracker - Documentación Completa
+# Basketball Stats Tracker - Documentación Completa
 
 ## Resumen del Proyecto
 
-Una aplicación web moderna y reactiva para registrar estadísticas de baloncesto en tiempo real. Diseñada para capturar datos detallados de cada jugador, equipo y momento del partido.
+Aplicación web moderna y reactiva para registrar estadísticas de baloncesto en tiempo real. Tema dark premium con glass morphism, diseño responsivo y modales accesibles.
 
-### Características Principales ✨
+### Características Principales
 
-- ✅ **Registro por Jugador**: 2 puntos, 3 puntos, faltas, rebotes, asistencias
-- ✅ **Gestión de Equipo**: Selector de 5 v 5, cambios en cualquier momento
+- ✅ **10 tipos de acciones**: +1, +2, +3 puntos, falta, falta técnica, falta antideportiva, rebote, asistencia, robo, pérdida
+- ✅ **Gestión de Equipo**: 5 v 5 por defecto, cambios en cualquier momento
 - ✅ **Control de Tiempo**: Cronómetro de 10 minutos, pausable y editable
-- ✅ **Puntuación en Vivo**: Contador de puntos por equipo
-- ✅ **Historial de Eventos**: Log con timestamps (minuto y cuarto)
-- ✅ **Exportación de Datos**: Descargar estadísticas en JSON
+- ✅ **Expulsión automática**: A 5 faltas personales o 2 faltas técnicas/antideportivas
+- ✅ **Deshacer**: Botón para revertir última acción
+- ✅ **Edición de equipos**: Nombres y números personalizables
+- ✅ **Historial de eventos**: Log con timestamps, edición y eliminación
+- ✅ **Exportación de datos**: Descarga en JSON
+- ✅ **Tema premium**: Dark mode con glass morphism y animaciones
+- ✅ **Scroll seguro**: Modales sin scrollear el fondo
 
 ---
 
-## Instalación y Setup
-
-### Requisitos Previos
-- Node.js 16+ instalado
-- npm o yarn
-
-### Pasos de Instalación
+## Instalación
 
 ```bash
-# 1. Abre la carpeta del proyecto
-cd "c:\Users\dalejo\Documents\DAR\Apps\Basket stats data"
-
-# 2. Instala dependencias
+# Instalar dependencias
 npm install
 
-# 3. Inicia el servidor de desarrollo
+# Iniciar servidor de desarrollo
 npm run dev
 
-# 4. Abre en el navegador
-# Se abrirá automáticamente en http://localhost:3000
-```
+# Compilar para producción
+npm run build
 
-### Alternativa - Script de Inicio (Windows)
-```bash
-# Ejecuta el archivo start.bat
-# Esto instalará dependencias (si es necesario) e iniciará la app automáticamente
-start.bat
+# Verificar tipos TypeScript
+npm run type-check
 ```
 
 ---
@@ -49,64 +40,32 @@ start.bat
 ## Estructura del Proyecto
 
 ```
-basketball-stats/
-├── src/
-│   ├── components/                  # Componentes React
-│   │   ├── PlayerGrid.tsx           # Selector de jugadores
-│   │   ├── PlayerStatsDisplay.tsx    # Estadísticas del jugador
-│   │   ├── ActionButtons.tsx         # Botones de acciones
-│   │   ├── QuarterTimer.tsx          # Cronómetro y puntuación
-│   │   ├── GameEventLog.tsx          # Historial de eventos
-│   │   └── TeamSummary.tsx           # Resumen del equipo
-│   ├── hooks/
-│   │   └── useQuarterTimer.ts        # Hook para el cronómetro
-│   ├── types/
-│   │   └── index.ts                  # Tipos TypeScript
-│   ├── config/
-│   │   └── playersConfig.ts          # Configuración de jugadores
-│   ├── App.tsx                       # Componente principal
-│   ├── main.tsx                      # Entry point
-│   ├── App.css                       # Estilos de la app
-│   └── index.css                     # Estilos globales
-├── public/                           # Archivos públicos
-├── package.json                      # Dependencias
-├── tsconfig.json                     # Configuración TypeScript
-├── vite.config.ts                    # Configuración Vite
-├── tailwind.config.js                # Configuración Tailwind
-├── postcss.config.js                 # Configuración PostCSS
-├── index.html                        # HTML principal
-├── README.md                         # Información general
-├── USAGE_GUIDE.md                    # Guía de uso
-└── start.bat                         # Script de inicio (Windows)
+src/
+├── components/
+│   ├── ActionButtons.tsx         # 10 botones de acciones
+│   ├── EditTeamsModal.tsx        # Modal editar equipos
+│   ├── FoulOutModal.tsx          # Modal expulsión por faltas
+│   ├── GameEventLog.tsx          # Registro de eventos
+│   ├── PlayerActionSelector.tsx  # Selector de jugadores
+│   ├── QuarterTimer.tsx          # Cronómetro y puntuación
+│   ├── TabNavigation.tsx         # Navegación entre tabs
+│   └── tabs/
+│       ├── ActionsTab.tsx        # Tab acciones (3 layouts)
+│       └── SummaryTab.tsx        # Tab resumen
+├── hooks/
+│   ├── useBodyScrollLock.ts      # Bloqueo scroll modales
+│   ├── useGameState.ts           # Estado del juego
+│   ├── usePlayerActions.ts       # Acciones de jugadores
+│   └── useQuarterTimer.ts        # Cronómetro
+├── config/
+│   └── playersConfig.ts          # Configuración inicial
+├── types/
+│   └── index.ts                  # Tipos TypeScript
+├── App.tsx                       # Componente principal
+├── App.css                       # Estilos app (glass morphism)
+├── index.css                     # Estilos globales y modales
+└── main.tsx                      # Entry point
 ```
-
----
-
-## Flujo de la Aplicación
-
-### Pantalla Principal - Layout de 3 Columnas
-
-```
-┌─────────────────┬─────────────────┬─────────────────┐
-│                 │                 │                 │
-│   IZQUIERDA     │    CENTRO       │    DERECHA      │
-│                 │                 │                 │
-│  • Cronómetro   │  • Equipo       │  • Acciones     │
-│  • Score        │  • Jugadores    │  • Cambios      │
-│  • Resúmenes    │  • Stats        │  • Historial    │
-│                 │                 │                 │
-└─────────────────┴─────────────────┴─────────────────┘
-```
-
-### Flujo de Usuario
-
-1. **Selecciona Equipo** → Local o Visitante
-2. **Selecciona Jugador** → Haz clic en su número/nombre
-3. **Registra Acción** → +2, +3, Falta, Rebote, Asistencia
-4. **Gestiona Tiempo** → Inicia, pausa, edita, cambia cuarto
-5. **Realiza Cambios** → Saca/mete jugadores del campo
-6. **Revisa Eventos** → Ve el historial de acciones
-7. **Exporta Datos** → Descarga las estadísticas
 
 ---
 
@@ -115,43 +74,54 @@ basketball-stats/
 ### Player
 ```typescript
 interface Player {
-  id: string;              // Identificador único
-  number: number;          // Número de dorsal
-  name: string;            // Nombre del jugador
-  team: 'home' | 'away';   // Equipo
-  points2: number;         // Tiros de 2 anotados
-  points3: number;         // Tiros de 3 anotados
-  fouls: number;           // Faltas personales
-  rebounds: number;        // Rebotes
-  assists: number;         // Asistencias
+  id: string;
+  number: number;
+  name: string;
+  team: 'home' | 'away';
+  points1: number;    // Tiros libres
+  points2: number;    // Tiros de 2
+  points3: number;    // Tiros de 3
+  fouls: number;      // Faltas personales
+  rebounds: number;   // Rebotes
+  assists: number;    // Asistencias
+  steals: number;     // Robos
+  turnovers: number;  // Pérdidas
+  technicalFouls: number;    // Faltas técnicas
+  unsportingFouls: number;   // Faltas antideportivas
 }
 ```
 
 ### PlayEvent
 ```typescript
 interface PlayEvent {
+  id?: string;
   timestamp: string;       // "Minuto 5 Cuarto 2"
   quarter: number;         // 1-4
-  minute: number;          // 0-10
-  second: number;          // 0-59
-  playerId: string;        // ID del jugador
-  playerName: string;      // Nombre del jugador
-  playerNumber: number;    // Número de dorsal
-  team: 'home' | 'away';   // Equipo
-  action: string;          // 'points2' | 'points3' | 'foul' | 'rebound' | 'assist'
-  teamStats: TeamStats;    // Stats del equipo al momento
+  minute: number;
+  second: number;
+  playerId: string;
+  playerName: string;
+  playerNumber: number;
+  team: 'home' | 'away';
+  action: 'points1' | 'points2' | 'points3' | 'foul' | 
+          'technical_foul' | 'unsporting_foul' | 'rebound' | 
+          'assist' | 'steal' | 'turnover';
+  teamStats: TeamStats;
 }
 ```
 
 ### TeamStats
 ```typescript
 interface TeamStats {
-  totalPoints: number;     // Puntos totales
-  totalFouls: number;      // Faltas totales
-  field2Points: number;    // Tiros de 2 convertidos
-  field3Points: number;    // Tiros de 3 convertidos
-  totalRebounds: number;   // Rebotes totales
-  totalAssists: number;    // Asistencias totales
+  totalPoints: number;
+  totalFouls: number;
+  field1Points: number;    // Tiros libres
+  field2Points: number;    // Tiros de 2
+  field3Points: number;    // Tiros de 3
+  totalRebounds: number;
+  totalAssists: number;
+  totalSteals: number;
+  totalTurnovers: number;
 }
 ```
 
@@ -159,111 +129,84 @@ interface TeamStats {
 
 ## Funcionalidades Detalladas
 
-### 1. Selección de Jugadores
-
-**Componente**: `PlayerGrid.tsx`
-
-- Muestra todos los jugadores del equipo seleccionado
-- Grid responsive (2-4 columnas según pantalla)
-- Resaltado verde = jugador en el campo
-- Resaltado gris = jugador en banca
-
-```typescript
-// Uso
-<PlayerGrid
-  players={players}
-  onField={onField}
-  onSelectPlayer={handleSelectPlayer}
-  team={selectedTeam}
-/>
-```
-
-### 2. Acciones de Jugador
+### 1. Acciones de Jugador
 
 **Componente**: `ActionButtons.tsx`
 
-- 5 botones de acción principales
-- Deshabilitados si no hay jugador seleccionado
-- Cada acción incrementa la estadística correspondiente
+10 botones de acción:
+- **+1, +2, +3**: Puntuación (Bulls rojo)
+- **Falta, Técnica, Anti.**: Faltas (ámbar/rojo)
+- **Rebote**: Rebotes (blanco)
+- **Ast.**: Asistencias (neón verde)
+- **Robo, Pérd.**: Robos/pérdidas (púrpura/naranja)
 
-```typescript
-const handleAction = (action: string) => {
-  // Actualiza stats del jugador
-  // Crea un evento con timestamp
-  // Calcula stats del equipo
-};
-```
+Deshabilitados si no hay jugador seleccionado o no está en cancha.
 
-### 3. Cronómetro del Cuarto
+### 2. Expulsión por Faltas
 
-**Componente**: `QuarterTimer.tsx`
+**Componente**: `FoulOutModal.tsx`
+
+Se activa automáticamente cuando:
+- 5 faltas personales
+- 2 faltas técnicas
+- 2 faltas antideportivas
+
+Muestra modal para seleccionar sustituto del banquillo.
+
+### 3. Cronómetro
+
 **Hook**: `useQuarterTimer.ts`
 
 - Cuenta regresiva de 10 minutos
-- Pueden pausarse y reanudarse
+- Pausa/reanudación
 - Edición manual de tiempo
-- Navegación entre cuartos
-
-```typescript
-const { timer, toggleTimer, resetTimer, setTimeManually } = useQuarterTimer();
-```
+- Navegación entre cuartos (1-4)
 
 ### 4. Gestión de Cambios
 
-**En el panel de Cambios**:
+**Modal**: Inline en `App.tsx`
 
-- Máximo 5 jugadores por equipo en el campo
-- Click para sacar/meter jugadores
-- Visualización por equipo
-- Contador de jugadores en el campo
+- Scroll seguro con `useBodyScrollLock`
+- Lista de jugadores por equipo
+- Botón CANCHA/BANCA para cada jugador
+- Contador de jugadores en cancha (máx 5)
 
-### 5. Registro de Eventos
+### 5. Edición de Equipos
+
+**Componente**: `EditTeamsModal.tsx`
+
+- Edición inline de nombres de equipo
+- Edición de nombre y número por jugador
+- Mismo sistema de scroll seguro
+
+### 6. Historial de Eventos
 
 **Componente**: `GameEventLog.tsx`
 
-- Historial de todos los eventos
-- Mostrados en orden inverso (último primero)
-- Información: jugador, acción, tiempo, equipo
-- Scroll automático para muchos eventos
+- Orden inverso (último primero)
+- Edición de acción de eventos
+- Eliminación de eventos
+- Función deshacer última acción
 
-### 6. Resumen de Equipo
+### 7. Resumen
 
-**Componente**: `TeamSummary.tsx`
+**Componente**: `SummaryTab.tsx`
 
-- Puntos totales del equipo
-- Faltas totales
-- Rebotes totales
-- Asistencias totales
-- Listado de jugadores con puntos individuales
+- Tabla por equipo con estadísticas individuales
+- Puntos totales, rebotes, asistencias, robos, pérdidas, faltas
 
-### 7. Exportación de Datos
+### 8. Layout Responsivo
 
-**Formato**: JSON
-
-```json
-{
-  "gameDate": "2024-01-15T14:30:00.000Z",
-  "finalStats": {
-    "home": {
-      "totalPoints": 78,
-      "totalFouls": 12,
-      "field2Points": 25,
-      "field3Points": 8,
-      "totalRebounds": 45,
-      "totalAssists": 18,
-      "players": [/* array de jugadores */]
-    },
-    "away": {/* similar */}
-  },
-  "events": [/* array de todos los eventos */]
-}
-```
+**3 layouts en `ActionsTab.tsx`**:
+- **Desktop (lg)**: 3 columnas - jugadores, eventos, acciones
+- **Tablet (md)**: 2 columnas - jugadores | eventos + acciones
+- **Móvil**: stacked - acciones, jugadores (scroll horizontal), eventos
 
 ---
 
 ## Personalización
 
-### Cambiar Nombres de Jugadores
+### Nombres de Jugadores
 
 Edita `src/config/playersConfig.ts`:
 
@@ -287,31 +230,29 @@ export const TEAM_CONFIG = {
 };
 ```
 
-Después: `npm run dev`
-
-### Cambiar Colores (Tailwind)
+### Colores (Tailwind)
 
 Modifica `tailwind.config.js`:
 
 ```javascript
-export default {
-  theme: {
-    extend: {
-      colors: {
-        // Tus colores personalizados
-      },
-    },
+colors: {
+  bulls: {
+    red: '#CE1141',
+    'red-dark': '#a70d2a',
+    black: '#222222',
+    gold: '#F5E6C8',
+    neon: '#39FF14',
   },
 }
 ```
 
-### Cambiar Duración de Cuarto
+### Duración de Cuarto
 
 En `src/hooks/useQuarterTimer.ts`:
 
 ```typescript
 const [timer, setTimer] = useState<Timer>({
-  minute: 10,  // ← Cambia aquí (en minutos)
+  minute: 10,  // ← Cambiar aquí
   second: 0,
   isRunning: false,
 });
@@ -319,121 +260,40 @@ const [timer, setTimer] = useState<Timer>({
 
 ---
 
-## Scripts Disponibles
+## Scripts
 
 ```bash
-npm run dev      # Inicia servidor de desarrollo con hot reload
-npm run build    # Compila para producción
-npm run preview  # Vista previa de la compilación
-npm run type-check  # Verifica tipos TypeScript
+npm run dev          # Servidor de desarrollo
+npm run build        # Compilar para producción
+npm run preview      # Vista previa de producción
+npm run type-check   # Verificar tipos TypeScript
 ```
 
 ---
 
-## Tecnologías Utilizadas
+## Tecnologías
 
 | Tecnología | Versión | Propósito |
 |-----------|---------|----------|
-| React | 18.2.0 | Framework UI |
-| TypeScript | 5.3.0 | Tipado estático |
-| Tailwind CSS | 3.3.0 | Estilos |
-| Vite | 5.0.0 | Bundler |
-| Vite React Plugin | 4.2.0 | Soporte JSX |
+| React | 18.2 | Framework UI |
+| TypeScript | 5.3 | Tipado estático |
+| Tailwind CSS | 3.3 | Estilos utility-first |
+| Vite | 5.0 | Bundler y dev server |
 
 ---
 
-## Performance y Optimizaciones
+## Optimizaciones
 
-- ✅ Componentes funcionales con hooks
-- ✅ Re-renders optimizados con useState/useEffect
-- ✅ Tipado TypeScript completo
-- ✅ Build de producción minificado (~50KB gzip)
-- ✅ CSS purificado con Tailwind
-- ✅ Sin dependencias externas innecesarias
-
----
-
-## Navegadores Soportados
-
-- ✅ Chrome 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Edge 90+
-
----
-
-## Limitaciones Actuales
-
-- Sin función "deshacer" para eventos
-- Sin sincronización en la nube
-- Sin soporte para múltiples pantallas
-- Sin importación de datos previos
-- Sin autenticación
-
----
-
-## Mejoras Futuras (Roadmap)
-
-- [ ] Función "deshacer" última acción
-- [ ] Soporte para timeouts
-- [ ] Estadísticas avanzadas (porcentaje de tiro, etc.)
-- [ ] Exportar a CSV/Excel
-- [ ] Sincronización en la nube (Firebase)
-- [ ] Modo oscuro
-- [ ] Análisis de estadísticas
-- [ ] Comparación de partidos
-- [ ] API REST para integración
-
----
-
-## Troubleshooting
-
-### La app no inicia
-
-```bash
-# Limpia node_modules
-rmdir /s node_modules
-npm install
-npm run dev
-```
-
-### Error de permisos (Windows)
-
-```bash
-# Ejecuta PowerShell como administrador
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
-
-### Puerto 3000 en uso
-
-```bash
-# Cambia el puerto en vite.config.ts
-server: {
-  port: 3001,  // o el puerto que prefieras
-}
-```
-
----
-
-## Contacto y Soporte
-
-Para dudas, sugerencias o reportar bugs, puedes:
-- Revisar la `USAGE_GUIDE.md` para guía de uso
-- Verificar la estructura del proyecto
-- Consultar la documentación de React: https://react.dev
+- ✅ Code splitting con React.lazy/Suspense
+- ✅ Memoización con React.memo/useMemo/useCallback
+- ✅ Custom hooks para separar lógica
+- ✅ Body scroll lock para modales
+- ✅ CSS classes reutilizables para modales
+- ✅ Touch-friendly (min 44px targets)
+- ✅ Safe area support (notch, Dynamic Island)
 
 ---
 
 ## Licencia
 
-MIT - Libre para uso personal y comercial
-
----
-
-**Última actualización**: Noviembre 2025  
-**Versión**: 1.0.0  
-**Estado**: ✅ Producción
-
----
-
-¡Disfruta rastreando baloncesto! 🏀✨
+MIT
