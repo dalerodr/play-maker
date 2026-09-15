@@ -1,135 +1,135 @@
-# Guía de Ejemplos - Basketball Stats Tracker
+# Usage Examples - Basketball Stats Tracker
 
-## Ejemplos de Uso Práctico
+## Practical Use Cases
 
-### Escenario 1: Primer Cuarto - Local vs Visitante
+### Scenario 1: First Quarter - Home vs Away
 
-**Tiempo**: 0:00 - Comienza el partido
+**Time**: 0:00 - Game starts
 
-1. Selecciona #5 (Pívot) del equipo Local
-2. Presiona **+2** → Local: 2 puntos
-3. Selecciona #3 (Alero) del equipo Visitante
-4. Presiona **+3** → Visitante: 3 puntos
-5. Selecciona #1 (Base) del Local
-6. Presiona **Falta** → Local: 1 falta
-7. Selecciona #5 del Local
-8. Presiona **Rebote** → Local: 1 rebote
+1. Select #5 (Center) from the Home team
+2. Press **+2** → Home: 2 points
+3. Select #3 (Small Forward) from the Away team
+4. Press **+3** → Away: 3 points
+5. Select #1 (Point Guard) from Home
+6. Press **Foul** → Home: 1 foul
+7. Select #5 from Home
+8. Press **Rebound** → Home: 1 rebound
 
-**Resultado**: Local 2 - Visitante 3
-
----
-
-### Escenario 2: Robo y Asistencia
-
-1. Selecciona #2 (Escolta) del Local
-2. Presiona **Robo** → Local: 1 robo
-3. Selecciona #1 (Base) del Local
-4. Presiona **Ast.** → Local: 1 asistencia
+**Result**: Home 2 - Away 3
 
 ---
 
-### Escenario 3: Falta Técnica y Expulsión
+### Scenario 2: Steal and Assist
 
-1. Selecciona #4 (Ala-Pívot) del Visitante
-2. Presiona **Técnica** → 1 falta técnica
-3. Presiona **Técnica** de nuevo → 2 faltas técnicas
-4. **Se abre modal de expulsión automáticamente**
-5. Selecciona un reserva del banquillo para sustituir
-
----
-
-### Escenario 4: Cambio de Jugador
-
-1. Presiona el botón **🔁 Cambios**
-2. Se abre el modal con ambos equipos
-3. En "Local": presiona **○ BANCA** en un reserva → entra a cancha
-4. Presiona **● CANCHA** en un titular → sale a banca
-5. Presiona **Cerrar**
-
-**Regla**: Máximo 5 por equipo en cancha.
+1. Select #2 (Shooting Guard) from Home
+2. Press **Steal** → Home: 1 steal
+3. Select #1 (Point Guard) from Home
+4. Press **Ast.** → Home: 1 assist
 
 ---
 
-### Escenario 5: Editar Equipos
+### Scenario 3: Technical Foul and Ejection
 
-1. Presiona **👥 Editar Equipos**
-2. Se abre el modal con ambos equipos
-3. Haz clic en un jugador → se abren campos de edición
-4. Cambia nombre o número
-5. Presiona **✓ Guardar**
-6. Para cambiar nombre del equipo: presiona **✎ Editar nombre**
-
----
-
-### Escenario 6: Deshacer Acción
-
-1. Selecciona #3 del Local y presiona **+3** (error, era +2)
-2. Presiona **↶ Deshacer**
-3. La última acción se revierte
-4. Selecciona #3 del Local de nuevo
-5. Presiona **+2** (acción correcta)
+1. Select #4 (Power Forward) from Away
+2. Press **Technical** → 1 technical foul
+3. Press **Technical** again → 2 technical fouls
+4. **Ejection modal opens automatically**
+5. Select a bench player as substitute
 
 ---
 
-### Escenario 7: Cambio de Cuarto
+### Scenario 4: Player Substitution
 
-1. El cronómetro llega a 0:00
-2. Presiona **Siguiente →** → Cuarto 2
-3. Presiona **↻ Reiniciar** → Vuelve a 10:00
-4. Presiona **▶ Iniciar** → Comienza el cuarto 2
+1. Press the **🔁 Subs** button
+2. Modal opens with both teams
+3. In "Home": press **○ BENCH** on a reserve → enters court
+4. Press **● COURT** on a starter → goes to bench
+5. Press **Close**
 
----
-
-### Escenario 8: Exportar y Nuevo Partido
-
-1. Al finalizar el partido, presiona **📥 Descargar**
-2. Se descarga `basket-stats-[timestamp].json`
-3. Presiona **🔄 Nuevo Partido**
-4. Todo se resetea (estadísticas, eventos, tiempo)
-5. Los nombres de jugadores se mantienen
+**Rule**: Maximum 5 per team on court.
 
 ---
 
-## Ejemplo de Sesión Completa
+### Scenario 5: Edit Teams
+
+1. Press **👥 Edit Teams**
+2. Modal opens with both teams
+3. Click a player → editing fields appear
+4. Change name or number
+5. Press **✓ Save**
+6. To change team name: press **✎ Edit name**
+
+---
+
+### Scenario 6: Undo Action
+
+1. Select #3 from Home and press **+3** (mistake, should be +2)
+2. Press **↶ Undo**
+3. Last action is reverted
+4. Select #3 from Home again
+5. Press **+2** (correct action)
+
+---
+
+### Scenario 7: Quarter Change
+
+1. Timer reaches 0:00
+2. Press **Next →** → Quarter 2
+3. Press **↻ Reset** → Returns to 10:00
+4. Press **▶ Start** → Quarter 2 begins
+
+---
+
+### Scenario 8: Export and New Game
+
+1. At game end, press **📥 Download**
+2. `basket-stats-[timestamp].json` downloads
+3. Press **🔄 New Game**
+4. Everything resets (stats, events, timer)
+5. Player names are preserved
+
+---
+
+## Complete Session Example
 
 ```
-00:00 - Local #5 (Pívot): +2 Puntos
-        Local: 2 | Visitante: 0
+00:00 - Home #5 (Center): +2 Points
+        Home: 2 | Away: 0
 
-00:45 - Visitante #2 (Escolta): +3 Puntos
-        Local: 2 | Visitante: 3
+00:45 - Away #2 (Shooting Guard): +3 Points
+        Home: 2 | Away: 3
 
-01:30 - Local #1 (Base): Falta
-        Local: 1 Falta | Visitante: 0
+01:30 - Home #1 (Point Guard): Foul
+        Home: 1 Foul | Away: 0
 
-02:15 - Local #5 (Pívot): Rebote
-        Local Rebotes: 1
+02:15 - Home #5 (Center): Rebound
+        Home Rebounds: 1
 
-02:50 - Visitante #3 (Alero): +3 Puntos
-        Local: 2 | Visitante: 6
+02:50 - Away #3 (Small Forward): +3 Points
+        Home: 2 | Away: 6
 
-03:20 - Local #3 (Alero): Asistencia (a #5)
-        Local Asistencias: 1
+03:20 - Home #3 (Small Forward): Assist (to #5)
+        Home Assists: 1
 
-04:00 - Local #5 (Pívot): +2 Puntos
-        Local: 4 | Visitante: 6
+04:00 - Home #5 (Center): +2 Points
+        Home: 4 | Away: 6
 
-04:30 - Local #2 (Escolta): Robo
-        Local Robos: 1
+04:30 - Home #2 (Shooting Guard): Steal
+        Home Steals: 1
 ```
 
 ---
 
-## Datos por Evento (JSON)
+## Event Data (JSON)
 
 ```json
 {
-  "timestamp": "Minuto 5 Cuarto 1",
+  "timestamp": "Minute 5 Quarter 1",
   "quarter": 1,
   "minute": 5,
   "second": 23,
   "playerId": "home-1",
-  "playerName": "Escolta",
+  "playerName": "Shooting Guard",
   "playerNumber": 2,
   "team": "home",
   "action": "steal",
@@ -151,8 +151,8 @@
 
 ## Tips
 
-1. **Selecciona jugador primero** → Los botones de acción se deshabilitan sin selección
-2. **Jugador debe estar en canca** → No se pueden registrar acciones desde banca
-3. **Usa Deshacer** → Más rápido que corregir manualmente
-4. **Exporta periódicamente** → No pierdas datos
-5. **Revisa el historial** → Verifica que todo se registró correctamente
+1. **Select player first** → Action buttons are disabled without selection
+2. **Player must be on court** → Actions can't be recorded from bench
+3. **Use Undo** → Faster than manual correction
+4. **Export regularly** → Don't lose data
+5. **Check event log** → Verify everything was recorded correctly

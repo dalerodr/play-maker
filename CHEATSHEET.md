@@ -1,6 +1,6 @@
-# REFERENCIA RÁPIDA - Basketball Stats Tracker
+# Quick Reference - Basketball Stats Tracker
 
-## INICIAR
+## Get Started
 
 ```bash
 npm install
@@ -9,121 +9,121 @@ npm run dev
 
 ---
 
-## ACCIONES DISPONIBLES
+## Available Actions
 
-| Acción | Botón | Color | Efecto |
-|--------|-------|-------|--------|
-| +1 Punto | +1 | Rojo | Tiros libres |
-| +2 Puntos | +2 | Rojo | Tiros de campo |
-| +3 Puntos | +3 | Rojo | Tiros de larga distancia |
-| Falta | Falta | Ámbar | +1 falta personal |
-| Falta Técnica | Técnica | Ámbar oscuro | +1 falta técnica (acumula) |
-| Falta Antideportiva | Anti. | Rojo oscuro | +1 falta antideportiva (acumula) |
-| Rebote | Rebote | Blanco | +1 rebote |
-| Asistencia | Ast. | Neón verde | +1 asistencia |
-| Robo | Robo | Púrpura | +1 robo |
-| Pérdida | Pérd. | Naranja | +1 pérdida |
+| Action | Button | Color | Effect |
+|--------|--------|-------|--------|
+| +1 Point | +1 | Red | Free throws |
+| +2 Points | +2 | Red | Field goals |
+| +3 Points | +3 | Red | Three-pointers |
+| Foul | Foul | Amber | +1 personal foul |
+| Technical Foul | Technical | Dark amber | +1 technical foul (cumulative) |
+| Unsporting Foul | Unspt. | Dark red | +1 unsporting foul (cumulative) |
+| Rebound | Rebound | White | +1 rebound |
+| Assist | Ast. | Neon green | +1 assist |
+| Steal | Steal | Purple | +1 steal |
+| Turnover | TO | Orange | +1 turnover |
 
-**Regla**: Selecciona un jugador en cancha primero, luego presiona la acción.
-
----
-
-## EXPULSIÓN AUTOMÁTICA
-
-| Condición | Resultado |
-|-----------|-----------|
-| 5 faltas personales | Expulsión + modal de sustitución |
-| 2 faltas técnicas | Expulsión + modal de sustitución |
-| 2 faltas antideportivas | Expulsión + modal de sustitución |
+**Rule**: Select an on-court player first, then press the action button.
 
 ---
 
-## CONTROLES DEL TIEMPO
+## Auto-Ejection
 
-| Control | Efecto |
+| Condition | Result |
+|-----------|--------|
+| 5 personal fouls | Ejection + substitution modal |
+| 2 technical fouls | Ejection + substitution modal |
+| 2 unsporting fouls | Ejection + substitution modal |
+
+---
+
+## Timer Controls
+
+| Control | Effect |
 |---------|--------|
-| ▶ Iniciar | Comienza cuenta regresiva |
-| ⏸ Pausar | Detiene el cronómetro |
-| ↻ Reiniciar | Vuelve a 10:00 |
-| ✎ Editar | Cambia minuto/segundo |
-| Anterior ← | Cuarto anterior |
-| Siguiente → | Cuarto siguiente |
+| ▶ Start | Begin countdown |
+| ⏸ Pause | Stop timer |
+| ↻ Reset | Return to 10:00 |
+| ✎ Edit | Change minute/second |
+| ← Previous | Previous quarter |
+| Next → | Next quarter |
 
 ---
 
-## BOTONES PRINCIPALES
+## Main Buttons
 
-| Botón | Función |
-|-------|---------|
-| ↶ Deshacer | Revierte la última acción |
-| 🔁 Cambios | Abre modal de sustituciones |
-| 👥 Editar Equipos | Abre modal para editar nombres/números |
-| 📥 Descargar | Exporta estadísticas a JSON |
-| 🔄 Nuevo Partido | Resetea todo (mantiene configuración) |
-
----
-
-## TABS
-
-| Tab | Contenido |
-|-----|-----------|
-| Acciones | Jugadores en cancha + eventos + botones de acción |
-| Resumen | Tabla de estadísticas por equipo |
+| Button | Function |
+|--------|----------|
+| ↶ Undo | Revert last action |
+| 🔁 Subs | Open substitution modal |
+| 👥 Edit Teams | Open team editor modal |
+| 📥 Download | Export stats to JSON |
+| 🔄 New Game | Reset everything (keeps config) |
 
 ---
 
-## LAYOUT RESPONSIVO
+## Tabs
 
-| Dispositivo | Layout |
-|-------------|--------|
-| Desktop (lg+) | 3 columnas: jugadores \| eventos \| acciones |
-| Tablet (md) | 2 columnas: jugadores \| eventos + acciones |
-| Móvil | Stacked: acciones → jugadores (scroll) → eventos |
-
----
-
-## MÁXIMOS
-
-| Concepto | Límite |
-|----------|--------|
-| Jugadores por equipo | 12 |
-| En cancha por equipo | 5 |
-| Tiros libres por jugador | Sin límite |
-| Faltas personales antes de expulsión | 5 |
-| Faltas técnicas antes de expulsión | 2 |
-| Faltas antideportivas antes de expulsión | 2 |
-| Duración de cuarto | 10 minutos |
-| Cuartos por partido | 4 |
+| Tab | Content |
+|-----|---------|
+| Actions | On-field players + event log + action buttons |
+| Summary | Per-team statistics table |
 
 ---
 
-## ARCHIVOS IMPORTANTES
+## Responsive Layout
 
-| Archivo | Propósito |
-|---------|-----------|
-| `src/config/playersConfig.ts` | Nombres y números iniciales |
-| `tailwind.config.js` | Colores Bulls y animaciones |
-| `src/hooks/useQuarterTimer.ts` | Duración del cuarto |
-
----
-
-## PERSONALIZAR
-
-### Cambiar nombres de jugadores
-Edita `src/config/playersConfig.ts` y recarga la app.
-
-### Cambiar colores
-Modifica `tailwind.config.js` → `theme.extend.colors.bulls`.
-
-### Cambiar duración de cuarto
-Modifica `src/hooks/useQuarterTimer.ts` → `minute: 10`.
+| Device | Layout |
+|--------|--------|
+| Desktop (lg+) | 3 columns: players \| events \| actions |
+| Tablet (md) | 2 columns: players \| events + actions |
+| Mobile | Stacked: actions → players (scroll) → events |
 
 ---
 
-## TECNOLOGÍAS
+## Limits
+
+| Concept | Limit |
+|---------|-------|
+| Players per team | 12 |
+| On court per team | 5 |
+| Free throws per player | Unlimited |
+| Personal fouls before ejection | 5 |
+| Technical fouls before ejection | 2 |
+| Unsporting fouls before ejection | 2 |
+| Quarter duration | 10 minutes |
+| Quarters per game | 4 |
+
+---
+
+## Important Files
+
+| File | Purpose |
+|------|---------|
+| `src/config/playersConfig.ts` | Initial player names and numbers |
+| `tailwind.config.js` | Bulls colors and animations |
+| `src/hooks/useQuarterTimer.ts` | Quarter duration |
+
+---
+
+## Customization
+
+### Change player names
+Edit `src/config/playersConfig.ts` and reload the app.
+
+### Change colors
+Edit `tailwind.config.js` → `theme.extend.colors.bulls`.
+
+### Change quarter duration
+Edit `src/hooks/useQuarterTimer.ts` → `minute: 10`.
+
+---
+
+## Tech Stack
 
 - React 18 + TypeScript 5.3
 - Tailwind CSS 3.3
-- Vite 5.0
-- Tema dark premium con glass morphism
-- Modales con scroll seguro (useBodyScrollLock)
+- Vite 6.0
+- Dark premium theme with glass morphism
+- Modals with safe scroll (useBodyScrollLock)

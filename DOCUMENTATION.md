@@ -1,75 +1,75 @@
-# Basketball Stats Tracker - Documentación Completa
+# Basketball Stats Tracker - Full Documentation
 
-## Resumen del Proyecto
+## Project Overview
 
-Aplicación web moderna y reactiva para registrar estadísticas de baloncesto en tiempo real. Tema dark premium con glass morphism, diseño responsivo y modales accesibles.
+A modern, reactive web application for tracking basketball game statistics in real time. Dark premium theme with glass morphism, responsive design, and accessible modals with safe scroll.
 
-### Características Principales
+### Key Features
 
-- ✅ **10 tipos de acciones**: +1, +2, +3 puntos, falta, falta técnica, falta antideportiva, rebote, asistencia, robo, pérdida
-- ✅ **Gestión de Equipo**: 5 v 5 por defecto, cambios en cualquier momento
-- ✅ **Control de Tiempo**: Cronómetro de 10 minutos, pausable y editable
-- ✅ **Expulsión automática**: A 5 faltas personales o 2 faltas técnicas/antideportivas
-- ✅ **Deshacer**: Botón para revertir última acción
-- ✅ **Edición de equipos**: Nombres y números personalizables
-- ✅ **Historial de eventos**: Log con timestamps, edición y eliminación
-- ✅ **Exportación de datos**: Descarga en JSON
-- ✅ **Tema premium**: Dark mode con glass morphism y animaciones
-- ✅ **Scroll seguro**: Modales sin scrollear el fondo
+- ✅ **10 Action Types**: +1, +2, +3 points, foul, technical foul, unsporting foul, rebound, assist, steal, turnover
+- ✅ **Team Management**: 5v5 default, substitutions at any time
+- ✅ **Time Control**: 10-minute countdown, pausable and editable
+- ✅ **Auto-Ejection**: At 5 personal fouls or 2 technical/unsporting fouls
+- ✅ **Undo**: Button to revert last action
+- ✅ **Team Editor**: Customizable player names and jersey numbers
+- ✅ **Event History**: Log with timestamps, editing, and deletion
+- ✅ **Data Export**: Download as JSON
+- ✅ **Premium Theme**: Dark mode with glass morphism and animations
+- ✅ **Safe Scroll**: Modals without background scrolling
 
 ---
 
-## Instalación
+## Installation
 
 ```bash
-# Instalar dependencias
+# Install dependencies
 npm install
 
-# Iniciar servidor de desarrollo
+# Start development server
 npm run dev
 
-# Compilar para producción
+# Build for production
 npm run build
 
-# Verificar tipos TypeScript
+# TypeScript type check
 npm run type-check
 ```
 
 ---
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
 src/
 ├── components/
-│   ├── ActionButtons.tsx         # 10 botones de acciones
-│   ├── EditTeamsModal.tsx        # Modal editar equipos
-│   ├── FoulOutModal.tsx          # Modal expulsión por faltas
-│   ├── GameEventLog.tsx          # Registro de eventos
-│   ├── PlayerActionSelector.tsx  # Selector de jugadores
-│   ├── QuarterTimer.tsx          # Cronómetro y puntuación
-│   ├── TabNavigation.tsx         # Navegación entre tabs
+│   ├── ActionButtons.tsx         # 10 action buttons
+│   ├── EditTeamsModal.tsx        # Team editing modal
+│   ├── FoulOutModal.tsx          # Ejection modal
+│   ├── GameEventLog.tsx          # Event log
+│   ├── PlayerActionSelector.tsx  # Player selector
+│   ├── QuarterTimer.tsx          # Timer and scoreboard
+│   ├── TabNavigation.tsx         # Tab navigation
 │   └── tabs/
-│       ├── ActionsTab.tsx        # Tab acciones (3 layouts)
-│       └── SummaryTab.tsx        # Tab resumen
+│       ├── ActionsTab.tsx        # Actions tab (3 layouts)
+│       └── SummaryTab.tsx        # Summary tab
 ├── hooks/
-│   ├── useBodyScrollLock.ts      # Bloqueo scroll modales
-│   ├── useGameState.ts           # Estado del juego
-│   ├── usePlayerActions.ts       # Acciones de jugadores
-│   └── useQuarterTimer.ts        # Cronómetro
+│   ├── useBodyScrollLock.ts      # Modal scroll lock
+│   ├── useGameState.ts           # Game state
+│   ├── usePlayerActions.ts       # Player actions
+│   └── useQuarterTimer.ts        # Timer
 ├── config/
-│   └── playersConfig.ts          # Configuración inicial
+│   └── playersConfig.ts          # Initial config
 ├── types/
-│   └── index.ts                  # Tipos TypeScript
-├── App.tsx                       # Componente principal
-├── App.css                       # Estilos app (glass morphism)
-├── index.css                     # Estilos globales y modales
+│   └── index.ts                  # TypeScript types
+├── App.tsx                       # Main component
+├── App.css                       # App styles (glass morphism)
+├── index.css                     # Global styles and modals
 └── main.tsx                      # Entry point
 ```
 
 ---
 
-## Tipos de Datos
+## TypeScript Types
 
 ### Player
 ```typescript
@@ -78,16 +78,16 @@ interface Player {
   number: number;
   name: string;
   team: 'home' | 'away';
-  points1: number;    // Tiros libres
-  points2: number;    // Tiros de 2
-  points3: number;    // Tiros de 3
-  fouls: number;      // Faltas personales
-  rebounds: number;   // Rebotes
-  assists: number;    // Asistencias
-  steals: number;     // Robos
-  turnovers: number;  // Pérdidas
-  technicalFouls: number;    // Faltas técnicas
-  unsportingFouls: number;   // Faltas antideportivas
+  points1: number;    // Free throws
+  points2: number;    // 2-pointers
+  points3: number;    // 3-pointers
+  fouls: number;      // Personal fouls
+  rebounds: number;   // Rebounds
+  assists: number;    // Assists
+  steals: number;     // Steals
+  turnovers: number;  // Turnovers
+  technicalFouls: number;    // Technical fouls
+  unsportingFouls: number;   // Unsporting fouls
 }
 ```
 
@@ -95,7 +95,7 @@ interface Player {
 ```typescript
 interface PlayEvent {
   id?: string;
-  timestamp: string;       // "Minuto 5 Cuarto 2"
+  timestamp: string;       // "Minute 5 Quarter 2"
   quarter: number;         // 1-4
   minute: number;
   second: number;
@@ -115,9 +115,9 @@ interface PlayEvent {
 interface TeamStats {
   totalPoints: number;
   totalFouls: number;
-  field1Points: number;    // Tiros libres
-  field2Points: number;    // Tiros de 2
-  field3Points: number;    // Tiros de 3
+  field1Points: number;    // Free throws
+  field2Points: number;    // 2-pointers
+  field3Points: number;    // 3-pointers
   totalRebounds: number;
   totalAssists: number;
   totalSteals: number;
@@ -127,112 +127,112 @@ interface TeamStats {
 
 ---
 
-## Funcionalidades Detalladas
+## Detailed Features
 
-### 1. Acciones de Jugador
+### 1. Player Actions
 
-**Componente**: `ActionButtons.tsx`
+**Component**: `ActionButtons.tsx`
 
-10 botones de acción:
-- **+1, +2, +3**: Puntuación (Bulls rojo)
-- **Falta, Técnica, Anti.**: Faltas (ámbar/rojo)
-- **Rebote**: Rebotes (blanco)
-- **Ast.**: Asistencias (neón verde)
-- **Robo, Pérd.**: Robos/pérdidas (púrpura/naranja)
+10 action buttons:
+- **+1, +2, +3**: Scoring (Bulls red)
+- **Foul, Technical, Unsporting**: Fouls (amber/red)
+- **Rebound**: Rebounds (white)
+- **Assist**: Assists (neon green)
+- **Steal, Turnover**: Steals/turnovers (purple/orange)
 
-Deshabilitados si no hay jugador seleccionado o no está en cancha.
+Disabled when no player is selected or player is on bench.
 
-### 2. Expulsión por Faltas
+### 2. Ejection System
 
-**Componente**: `FoulOutModal.tsx`
+**Component**: `FoulOutModal.tsx`
 
-Se activa automáticamente cuando:
-- 5 faltas personales
-- 2 faltas técnicas
-- 2 faltas antideportivas
+Triggers automatically when:
+- 5 personal fouls
+- 2 technical fouls
+- 2 unsporting fouls
 
-Muestra modal para seleccionar sustituto del banquillo.
+Opens modal to select a bench replacement.
 
-### 3. Cronómetro
+### 3. Timer
 
 **Hook**: `useQuarterTimer.ts`
 
-- Cuenta regresiva de 10 minutos
-- Pausa/reanudación
-- Edición manual de tiempo
-- Navegación entre cuartos (1-4)
+- 10-minute countdown
+- Pause/resume
+- Manual time editing
+- Quarter navigation (1-4)
 
-### 4. Gestión de Cambios
+### 4. Substitutions
 
-**Modal**: Inline en `App.tsx`
+**Modal**: Inline in `App.tsx`
 
-- Scroll seguro con `useBodyScrollLock`
-- Lista de jugadores por equipo
-- Botón CANCHA/BANCA para cada jugador
-- Contador de jugadores en cancha (máx 5)
+- Safe scroll via `useBodyScrollLock`
+- Player list by team
+- COURT/BENCH toggle button
+- On-court player counter (max 5)
 
-### 5. Edición de Equipos
+### 5. Team Editor
 
-**Componente**: `EditTeamsModal.tsx`
+**Component**: `EditTeamsModal.tsx`
 
-- Edición inline de nombres de equipo
-- Edición de nombre y número por jugador
-- Mismo sistema de scroll seguro
+- Inline team name editing
+- Player name and number editing
+- Same safe scroll system
 
-### 6. Historial de Eventos
+### 6. Event Log
 
-**Componente**: `GameEventLog.tsx`
+**Component**: `GameEventLog.tsx`
 
-- Orden inverso (último primero)
-- Edición de acción de eventos
-- Eliminación de eventos
-- Función deshacer última acción
+- Reverse order (newest first)
+- Edit event action
+- Delete events
+- Undo last action
 
-### 7. Resumen
+### 7. Summary
 
-**Componente**: `SummaryTab.tsx`
+**Component**: `SummaryTab.tsx`
 
-- Tabla por equipo con estadísticas individuales
-- Puntos totales, rebotes, asistencias, robos, pérdidas, faltas
+- Per-team table with individual stats
+- Total points, rebounds, assists, steals, turnovers, fouls
 
-### 8. Layout Responsivo
+### 8. Responsive Layout
 
-**3 layouts en `ActionsTab.tsx`**:
-- **Desktop (lg)**: 3 columnas - jugadores, eventos, acciones
-- **Tablet (md)**: 2 columnas - jugadores | eventos + acciones
-- **Móvil**: stacked - acciones, jugadores (scroll horizontal), eventos
+**3 layouts in `ActionsTab.tsx`**:
+- **Desktop (lg)**: 3 columns - players | events | actions
+- **Tablet (md)**: 2 columns - players | events + actions
+- **Mobile**: Stacked - actions → players (scroll) → events
 
 ---
 
-## Personalización
+## Customization
 
-### Nombres de Jugadores
+### Player Names
 
-Edita `src/config/playersConfig.ts`:
+Edit `src/config/playersConfig.ts`:
 
 ```typescript
 export const TEAM_CONFIG = {
   home: {
-    name: 'Equipo Local',
+    name: 'Home Team',
     players: [
-      { number: 1, name: 'Tu Base' },
-      { number: 2, name: 'Tu Escolta' },
+      { number: 1, name: 'Your PG' },
+      { number: 2, name: 'Your SG' },
       // ...
     ],
   },
   away: {
-    name: 'Equipo Visitante',
+    name: 'Away Team',
     players: [
-      { number: 1, name: 'Base Rival' },
+      { number: 1, name: 'Opponent PG' },
       // ...
     ],
   },
 };
 ```
 
-### Colores (Tailwind)
+### Colors (Tailwind)
 
-Modifica `tailwind.config.js`:
+Modify `tailwind.config.js`:
 
 ```javascript
 colors: {
@@ -246,13 +246,13 @@ colors: {
 }
 ```
 
-### Duración de Cuarto
+### Quarter Duration
 
-En `src/hooks/useQuarterTimer.ts`:
+In `src/hooks/useQuarterTimer.ts`:
 
 ```typescript
 const [timer, setTimer] = useState<Timer>({
-  minute: 10,  // ← Cambiar aquí
+  minute: 10,  // ← Change here
   second: 0,
   isRunning: false,
 });
@@ -263,37 +263,37 @@ const [timer, setTimer] = useState<Timer>({
 ## Scripts
 
 ```bash
-npm run dev          # Servidor de desarrollo
-npm run build        # Compilar para producción
-npm run preview      # Vista previa de producción
-npm run type-check   # Verificar tipos TypeScript
+npm run dev          # Development server
+npm run build        # Production build
+npm run preview      # Preview production build
+npm run type-check   # TypeScript type check
 ```
 
 ---
 
-## Tecnologías
+## Technologies
 
-| Tecnología | Versión | Propósito |
-|-----------|---------|----------|
-| React | 18.2 | Framework UI |
-| TypeScript | 5.3 | Tipado estático |
-| Tailwind CSS | 3.3 | Estilos utility-first |
-| Vite | 5.0 | Bundler y dev server |
+| Technology | Version | Purpose |
+|-----------|---------|---------|
+| React | 18.2 | UI Framework |
+| TypeScript | 5.3 | Static typing |
+| Tailwind CSS | 3.3 | Utility-first CSS |
+| Vite | 6.0 | Bundler and dev server |
 
 ---
 
-## Optimizaciones
+## Optimizations
 
-- ✅ Code splitting con React.lazy/Suspense
-- ✅ Memoización con React.memo/useMemo/useCallback
-- ✅ Custom hooks para separar lógica
-- ✅ Body scroll lock para modales
-- ✅ CSS classes reutilizables para modales
+- ✅ Code splitting with React.lazy/Suspense
+- ✅ Memoization with React.memo/useMemo/useCallback
+- ✅ Custom hooks for logic separation
+- ✅ Body scroll lock for modals
+- ✅ Reusable CSS classes for modals
 - ✅ Touch-friendly (min 44px targets)
 - ✅ Safe area support (notch, Dynamic Island)
 
 ---
 
-## Licencia
+## License
 
 MIT

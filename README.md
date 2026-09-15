@@ -1,139 +1,154 @@
 # Basketball Stats Tracker 🏀
 
-Aplicación web moderna para registrar estadísticas de baloncesto en tiempo real. Tema dark premium con efectos glass morphism, diseño responsivo y modales con scroll seguro.
+A modern web application for tracking basketball game statistics in real time. Dark premium theme with glass morphism effects, responsive design, and safe-area modals.
 
-## Características
+<p align="center">
+  <a href="https://play-maker.dalejorodriguez.workers.dev">
+    👉 Basketball Stats Tracker 👈
+  </a>
+</p>
 
-✨ **Registro en Tiempo Real**
-- 📊 10 acciones por jugador: +1, +2, +3 puntos, falta, falta técnica, falta antideportiva, rebote, asistencia, robo, pérdida
-- 👥 Selector de jugadores en el campo con sustituciones instantáneas
-- 🕐 Cronómetro de 10 minutos por cuarto (pausable y editable)
-- 📈 Contador de puntos por equipo en tiempo real
-- ⚠️ Expulsión automática a 5 faltas personales o 2 faltas técnicas/antideportivas
+<p align="center">
+  <a href="https://play-maker.dalejorodriguez.workers.dev">
+    <img src="https://github.com/dalerodr/play-maker/blob/main/screenshots/Bulls Utah 97 - Game Summary.png" alt="Game Summary" width="300">
+  </a>
+  <a href="https://play-maker.dalejorodriguez.workers.dev">
+    <img src="https://github.com/dalerodr/play-maker/blob/main/screenshots/Bulls Utah 97 - Team Settings.png" alt="Team Settings" width="300">
+  </a>
+</p>
 
-## Funcionalidades Principales
+## Features
 
-### 1. Gestión de Jugadores
-- 5 v 5 por defecto (Base, Escolta, Alero, Ala-Pívot, Pívot)
-- Cambios de jugadores en cualquier momento
-- 12 jugadores por equipo (local y visitante)
-- Números y nombres personalizables
+✨ **Real-Time Tracking**
+- 📊 10 action types per player: +1, +2, +3 points, foul, technical foul, unsporting foul, rebound, assist, steal, turnover
+- 👥 On-field player selector with instant substitutions
+- 🕐 10-minute quarter timer (pausable and editable)
+- 📈 Live team score counter
+- ⚠️ Automatic ejection at 5 personal fouls or 2 technical/unsporting fouls
 
-### 2. Registro de Acciones
-- **+1 Punto**: Tiros libres
-- **+2 Puntos**: Tiros de campo cercanos
-- **+3 Puntos**: Tiros de larga distancia
-- **Falta**: Faltas personales
-- **Falta Técnica**: Acumula hacia expulsión
-- **Falta Antideportiva**: Acumula hacia expulsión
-- **Rebote**: Registra rebotes
-- **Asistencia**: Cuenta asistencias
-- **Robo**: Registra robos de balón
-- **Pérdida**: Registra pérdidas de balón
+## Main Features
 
-### 3. Control de Tiempo
-- Cronómetro de 10 minutos por cuarto
-- Controles: Iniciar/Pausar, Reiniciar, Editar
-- Navegación entre cuartos (1-4)
-- Todos los eventos se registran con timestamp (minuto y cuarto)
+### 1. Player Management
+- 5v5 default lineup (Point Guard, Shooting Guard, Small Forward, Power Forward, Center)
+- Substitutions at any time
+- 12 players per team (home and away)
+- Customizable names and jersey numbers
 
-### 4. Gestión de Cambios
-- Modal con scroll seguro (no scrollea el fondo)
-- Máximo 5 jugadores por equipo en el campo
-- Click para sacar/meter jugadores
-- Contador visual de jugadores en cancha
+### 2. Action Tracking
+- **+1 Point**: Free throws
+- **+2 Points**: Close-range field goals
+- **+3 Points**: Three-pointers
+- **Foul**: Personal fouls
+- **Technical Foul**: Counts toward ejection
+- **Unsporting Foul**: Counts toward ejection
+- **Rebound**: Rebounds
+- **Assist**: Assists
+- **Steal**: Steals
+- **Turnover**: Turnovers
 
-### 5. Edición de Equipos
-- Modal para editar nombres y números de jugadores
-- Edición de nombres de equipo
-- Mismo sistema de scroll seguro que cambios
+### 3. Time Control
+- 10-minute quarter countdown timer
+- Controls: Start/Pause, Reset, Edit
+- Quarter navigation (1-4)
+- All events logged with timestamp (minute and quarter)
 
-### 6. Historial de Eventos
-- Log de todos los eventos registrados
-- Información: Jugador, acción, tiempo, equipo
-- Edición y eliminación de eventos
-- Función deshacer última acción
+### 4. Substitution Management
+- Modal with safe scroll (no background scrolling)
+- Maximum 5 players per team on court
+- Click to sub players in/out
+- Visual player count on court
 
-### 7. Resumen por Equipo
-- Puntos totales por tipo (1pt, 2pt, 3pt)
-- Faltas, rebotes, asistencias, robos, pérdidas
-- Estadísticas individuales de jugadores
+### 5. Team Editor
+- Modal for editing player names and jersey numbers
+- Team name editing
+- Same safe scroll system as substitutions
 
-### 8. Exportación de Datos
-- Descarga de estadísticas en formato JSON
-- Incluye: Datos finales, eventos registrados, timestamps
+### 6. Event History
+- Log of all recorded events
+- Event info: player, action, time, team
+- Event editing and deletion
+- Undo last action button
 
-### 9. Diseño Premium
-- Tema oscuro con glass morphism
-- Fondo sutil con imagen Bulls
-- Animaciones suaves
-- Totalmente responsivo (desktop, tablet, móvil)
+### 7. Team Summary
+- Total points by type (1pt, 2pt, 3pt)
+- Fouls, rebounds, assists, steals, turnovers
+- Individual player statistics
 
-## Instalación
+### 8. Data Export
+- Download statistics as JSON
+- Includes: final stats, event log, timestamps
+
+### 9. Premium Design
+- Dark theme with glass morphism
+- Subtle Bulls background image
+- Smooth animations
+- Fully responsive (desktop, tablet, mobile)
+
+## Installation
 
 ```bash
-# Instalar dependencias
+# Install dependencies
 npm install
 
-# Iniciar modo desarrollo
+# Start development server
 npm run dev
 
-# Compilar para producción
+# Build for production
 npm run build
 
-# Verificar tipos
+# Type check
 npm run type-check
 ```
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
 src/
 ├── components/
-│   ├── ActionButtons.tsx         # Botones de acciones (10 tipos)
-│   ├── EditTeamsModal.tsx        # Modal para editar equipos
-│   ├── FoulOutModal.tsx          # Modal de expulsión por faltas
-│   ├── GameEventLog.tsx          # Registro de eventos
-│   ├── PlayerActionSelector.tsx  # Selector de jugadores en cancha
-│   ├── QuarterTimer.tsx          # Cronómetro y puntuación
-│   ├── TabNavigation.tsx         # Navegación entre tabs
+│   ├── ActionButtons.tsx         # Action buttons (10 types)
+│   ├── EditTeamsModal.tsx        # Team editing modal
+│   ├── FoulOutModal.tsx          # Ejection modal
+│   ├── GameEventLog.tsx          # Event log
+│   ├── PlayerActionSelector.tsx  # On-field player selector
+│   ├── QuarterTimer.tsx          # Timer and scoreboard
+│   ├── TabNavigation.tsx         # Tab navigation
 │   └── tabs/
-│       ├── ActionsTab.tsx        # Tab de acciones (3 layouts)
-│       └── SummaryTab.tsx        # Tab de resumen
+│       ├── ActionsTab.tsx        # Actions tab (3 layouts)
+│       └── SummaryTab.tsx        # Summary tab
 ├── hooks/
-│   ├── useBodyScrollLock.ts      # Bloqueo de scroll para modales
-│   ├── useGameState.ts           # Estado del juego
-│   ├── usePlayerActions.ts       # Acciones de jugadores
-│   └── useQuarterTimer.ts        # Cronómetro
+│   ├── useBodyScrollLock.ts      # Modal scroll lock
+│   ├── useGameState.ts           # Game state
+│   ├── usePlayerActions.ts       # Player actions
+│   └── useQuarterTimer.ts        # Timer
 ├── config/
-│   └── playersConfig.ts          # Configuración inicial
+│   └── playersConfig.ts          # Initial player config
 ├── types/
-│   └── index.ts                  # Tipos TypeScript
-├── App.tsx                       # Componente principal
-├── App.css                       # Estilos de la app
-├── index.css                     # Estilos globales y modales
+│   └── index.ts                  # TypeScript types
+├── App.tsx                       # Main component
+├── App.css                       # App styles (glass morphism)
+├── index.css                     # Global styles and modals
 └── main.tsx                      # Entry point
 ```
 
-## Uso
+## Usage
 
-1. **Selecciona Jugadores**: Haz clic en los jugadores de cada equipo
-2. **Registra Acciones**: Selecciona un jugador y presiona el botón correspondiente
-3. **Gestiona Cambios**: Usa el botón "Cambios" para sacar/meter jugadores
-4. **Edita Equipos**: Usa "Editar Equipos" para cambiar nombres/números
-5. **Controla el Tiempo**: Inicia, pausa o edita el cronómetro
-6. **Deshacer**: Usa "↶ Deshacer" si cometes un error
-7. **Exporta**: Descarga las estadísticas al finalizar
+1. **Select Players**: Click players from each team
+2. **Record Actions**: Select a player and press the corresponding button
+3. **Manage Subs**: Use the "Subs" button to sub players in/out
+4. **Edit Teams**: Use "Edit Teams" to change names/numbers
+5. **Control Time**: Start, pause, or edit the timer
+6. **Undo**: Use the undo button if you make a mistake
+7. **Export**: Download statistics when the game ends
 
-## Tecnologías
+## Technologies
 
 - ⚛️ React 18
 - 📘 TypeScript 5.3
 - 🎨 Tailwind CSS 3.3
-- ⚡ Vite 5.0
+- ⚡ Vite 6.0
 - 🎯 React Hooks
 - 🎨 Custom Bulls Theme
 
-## Licencia
+## License
 
 MIT
