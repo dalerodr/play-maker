@@ -1,0 +1,13 @@
+{
+  "name": "play-maker-hyperframes-video",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "preview": "npx hyperframes preview",
+    "render": "npx hyperframes render",
+    "lint": "npx hyperframes lint"
+  },
+  "devDependencies": {
+    "hyperframes": "latest"
+  }
+}

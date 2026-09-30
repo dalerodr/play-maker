@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, height=1080">
+  <title>Basketball Stats Tracker — Promo</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #0a0a0a; }
+    #root { position: relative; width: 100%; height: 100%; overflow: hidden; font-family: 'Inter', sans-serif; color: #fff; }
+
+    /* ── Background ──────────────────────────────────────────── */
+    .bg-base {
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, #0a0a0a 0%, #111 40%, #1a0a0f 70%, #0a0a0a 100%);
+    }
+
+    /* ── Scenes ──────────────────────────────────────────────── */
+    .scene {
+      position: absolute; top: 0; left: 0; width: 1920px; height: 1080px;
+      overflow: hidden; display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ── SCENE 1: Bulls BG poster ────────────────────────────── */
+    #poster { z-index: 1; }
+    .poster-wrap {
+      position: relative; width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .poster-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .poster-gradient {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.7) 100%);
+    }
+    .poster-content {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      z-index: 2;
+    }
+    .poster-badge {
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(206,17,65,0.9); border-radius: 8px;
+      padding: 8px 18px; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .poster-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; }
+    .poster-title {
+      font-family: 'Bebas Neue', sans-serif; font-size: 80px; line-height: 1;
+      letter-spacing: 0.04em; text-transform: uppercase; margin: 20px 0 0 0;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.6);
+    }
+    .poster-sub {
+      font-size: 20px; font-weight: 300; color: rgba(255,255,255,0.75); margin: 10px 0 0 0;
+    }
+
+    /* ── Screenshot clips ────────────────────────────────────── */
+    .screen-clip {
+      position: absolute; top: 50%; left: 50%;
+      border-radius: 14px; overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08);
+    }
+    .screen-clip img {
+      display: block; width: 100%; height: 100%; object-fit: contain;
+      background: #111;
+    }
+
+    /* ── Caption bar ─────────────────────────────────────────── */
+    #caption-bar {
+      position: absolute; bottom: 48px; left: 50%;
+      z-index: 20; display: flex; align-items: center; gap: 14px;
+      background: rgba(10,10,10,0.88); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
+      padding: 12px 28px;
+    }
+    .cap-tag {
+      background: #CE1141; color: #fff; font-size: 11px; font-weight: 700;
+      padding: 4px 10px; border-radius: 5px; text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .cap-text {
+      font-size: 17px; font-weight: 500; color: rgba(255,255,255,0.85);
+    }
+
+    /* ── Flash ───────────────────────────────────────────────── */
+    #flash {
+      position: absolute; inset: 0; z-index: 45; background: #CE1141;
+      opacity: 0; pointer-events: none;
+    }
+
+    /* ── Vignette ────────────────────────────────────────────── */
+    .vignette {
+      position: absolute; inset: 0; z-index: 40; pointer-events: none;
+      background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.5) 100%);
+    }
+
+    /* ── Basketball ──────────────────────────────────────────── */
+    #basketball {
+      position: absolute; z-index: 30; width: 50px; height: 50px;
+      pointer-events: none; transform-origin: center center;
+    }
+    #basketball svg { width: 100%; height: 100%; }
+  </style>
+</head>
+<body>
+<div data-hf-id="hf-28xe" id="root" data-composition-id="basketball-promo" data-width="1920" data-height="1080" data-duration="15">
+
+  <div data-hf-id="hf-7v19" class="bg-base"></div>
+
+  <!-- SCENE 1: Bulls BG poster (0 – 3s) -->
+  <div data-hf-id="hf-ycx5" id="poster" class="scene">
+    <div data-hf-id="hf-s28k" class="poster-wrap">
+      <img data-hf-id="hf-zp6e" src="screenshots/bulls-bg.png" alt="Chicago Bulls Court">
+      <div data-hf-id="hf-la3k" class="poster-gradient"></div>
+    </div>
+    <div data-hf-id="hf-w6zr" class="poster-content">
+      <div data-hf-id="hf-is3k" class="poster-badge"><span data-hf-id="hf-9gry" class="dot"></span> LIVE STATS</div>
+      <h1 data-hf-id="hf-ssfs" class="poster-title">Basketball Stats Tracker</h1>
+      <p data-hf-id="hf-1sw1" class="poster-sub">Real-time analytics for every game</p>
+    </div>
+  </div>
+
+  <!-- SCENE 2: Full Screen (3 – 6s) -->
+  <div data-hf-id="hf-3xnz" id="sc1" class="scene screen-clip" style="opacity: 0; z-index: 2; width: 1280px; height: 720px; background-image: none">
+    <img data-hf-id="hf-ghkq" src="screenshots/Bulls Utah 97 - Full Screen.png" alt="Full Screen">
+  </div>
+
+  <!-- SCENE 3: Game Summary (6 – 9s) -->
+  <div data-hf-id="hf-2og3" id="sc2" class="scene screen-clip" style="opacity:0; z-index:3; width:1280px; height:720px;">
+    <img data-hf-id="hf-a5um" src="screenshots/Bulls Utah 97 - Game Summary.png" alt="Game Summary">
+  </div>
+
+  <!-- SCENE 4: Team Settings (9 – 12s) -->
+  <div data-hf-id="hf-5nur" id="sc3" class="scene screen-clip" style="opacity:0; z-index:4; width:1280px; height:720px;">
+    <img data-hf-id="hf-n7w2" src="screenshots/Bulls Utah 97 - Team Settings.png" alt="Team Settings">
+  </div>
+
+  <!-- SCENE 5: Chicago Bulls logo zoom (12 – 15s) -->
+  <div data-hf-id="hf-o449" id="bulls-logo" class="scene" style="opacity:0; z-index:5;">
+    <img data-hf-id="hf-19nc" src="screenshots/Chicago Bulls.png" alt="Chicago Bulls" style="width:100%; height:100%; object-fit:contain;">
+  </div>
+
+  <!-- Caption bar -->
+  <div data-hf-id="hf-guax" id="caption-bar" style="opacity:0; z-index:20;">
+    <span data-hf-id="hf-omg7" class="cap-tag" id="cap-tag">Dashboard</span>
+    <span data-hf-id="hf-7a4d" class="cap-text" id="cap-text">Main overview</span>
+  </div>
+
+  <!-- Basketball -->
+  <div data-hf-id="hf-63ls" id="basketball" style="opacity:0;">
+    <svg data-hf-id="hf-v5qr" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle data-hf-id="hf-njnq" cx="50" cy="50" r="48" fill="#E85D04" stroke="#C2410C" stroke-width="2" />
+      <path data-hf-id="hf-3lnp" d="M50 2 C50 2 50 98 50 98" stroke="#C2410C" stroke-width="1.5" fill="none" />
+      <path data-hf-id="hf-jk2e" d="M2 50 C2 50 98 50 98 50" stroke="#C21141" stroke-width="1.5" fill="none" />
+      <path data-hf-id="hf-ex12" d="M15 15 C40 40 60 60 85 85" stroke="#C2410C" stroke-width="1.2" fill="none" />
+      <path data-hf-id="hf-vuvs" d="M85 15 C60 40 40 60 15 85" stroke="#C2410C" stroke-width="1.2" fill="none" />
+    </svg>
+  </div>
+
+  <div data-hf-id="hf-hmg5" id="flash"></div>
+  <div data-hf-id="hf-q7bi" class="vignette"></div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var captions = {
+    sc1: ["Live View", "Real-time court view with on-field players"],
+    sc2: ["Game Summary", "Full box score with per-player breakdown"],
+    sc3: ["Team Settings", "Edit names, numbers, and team details"],
+  };
+
+  gsap.set("#sc1", { x: -779, y: -469 });
+
+  gsap.set("#sc2", { x: -640, y: -409 });
+
+  var tl = gsap.timeline({ paused: true });
+
+  /* ── SCENE 1: Bulls BG poster  0 → 3s ────────────────────── */
+  tl.from(".poster-title", { y: 40, opacity: 0, duration: 0.7, ease: "power3.out" }, 0.3);
+  tl.from(".poster-badge", { y: -20, opacity: 0, duration: 0.5, ease: "power3.out" }, 0.5);
+  tl.from(".poster-sub", { y: 15, opacity: 0, duration: 0.5, ease: "power3.out" }, 0.7);
+
+  /* Basketball bounces across poster */
+  tl.set("#basketball", { opacity: 1, x: -60, y: 350 }, 0.2);
+  tl.to("#basketball", { x: 490, y: 520, rotation: 360, duration: 0.4, ease: "power2.in", overwrite: "auto" }, 0.2);
+  tl.to("#basketball", { x: 960, y: 280, rotation: 720, duration: 0.4, ease: "power2.out", overwrite: "auto" }, 0.6);
+  tl.to("#basketball", { x: 1400, y: 520, rotation: 1080, duration: 0.4, ease: "power2.in", overwrite: "auto" }, 1.0);
+  tl.to("#basketball", { x: 2000, y: 200, rotation: 1440, opacity: 0, duration: 0.45, ease: "power3.in", overwrite: "auto" }, 1.4);
+
+  /* Poster exit */
+  tl.to("#flash", { opacity: 0.15, duration: 0.06, overwrite: "auto" }, 2.7);
+  tl.to("#flash", { opacity: 0, duration: 0.15, overwrite: "auto" }, 2.77);
+  tl.to("#poster", { opacity: 0, duration: 0.25, ease: "power2.in" }, 2.75);
+
+  tl.to("#sc1", { clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "power2.inOut" }, 3.0);
+  tl.add(function () {
+    document.getElementById("cap-tag").textContent = "Live View";
+    document.getElementById("cap-text").textContent = captions.sc1[1];
+  }, 3.1);
+  tl.fromTo("#caption-bar",
+    { opacity: 0, y: 20, xPercent: -50 },
+    { opacity: 1, y: 0, xPercent: -50, duration: 0.35, ease: "back.out(1.5)", immediateRender: false },
+    3.1
+  );
+
+  /* Basketball pass */
+  tl.set("#basketball", { opacity: 1, x: -60, y: 400, rotation: 0 }, 3.5);
+  tl.to("#basketball", { x: 2000, y: 350, rotation: 900, duration: 0.65, ease: "power1.inOut" }, 3.5);
+  tl.set("#basketball", { opacity: 0 }, 4.15);
+
+  /* Exit */
+  tl.to("#caption-bar", { opacity: 0, y: -10, xPercent: -50, duration: 0.25, ease: "power2.in" }, 5.6);
+  tl.to("#flash", { opacity: 0.1, duration: 0.05, overwrite: "auto" }, 5.85);
+  tl.to("#flash", { opacity: 0, duration: 0.12, overwrite: "auto" }, 5.9);
+  tl.to("#sc1", { opacity: 0, duration: 0.2, ease: "power2.in" }, 5.9);
+
+  tl.add(function () {
+    document.getElementById("cap-tag").textContent = "Game Summary";
+    document.getElementById("cap-text").textContent = captions.sc2[1];
+  }, 6.1);
+  tl.fromTo("#caption-bar",
+    { opacity: 0, y: 20, xPercent: -50 },
+    { opacity: 1, y: 0, xPercent: -50, duration: 0.35, ease: "back.out(1.5)", immediateRender: false },
+    6.1
+  );
+
+  /* Basketball spin in */
+  tl.set("#basketball", { opacity: 1, x: 1600, y: -60, rotation: 0 }, 5.8);
+  tl.to("#basketball", { x: 930, y: 490, rotation: 720, duration: 0.5, ease: "power3.out" }, 5.8);
+  tl.to("#basketball", { x: -80, y: 600, rotation: 1080, opacity: 0, duration: 0.4, ease: "power3.in" }, 6.3);
+
+  /* Exit */
+  tl.to("#caption-bar", { opacity: 0, y: -10, xPercent: -50, duration: 0.25, ease: "power2.in" }, 8.6);
+  tl.to("#flash", { opacity: 0.1, duration: 0.05, overwrite: "auto" }, 8.85);
+  tl.to("#flash", { opacity: 0, duration: 0.12, overwrite: "auto" }, 8.9);
+  tl.to("#sc2", { opacity: 0, duration: 0.2, ease: "power2.in" }, 8.9);
+
+  tl.to("#sc3", { y: 0, scale: 1, duration: 0.5, ease: "bounce.out" }, 9.0);
+  tl.add(function () {
+    document.getElementById("cap-tag").textContent = "Team Settings";
+    document.getElementById("cap-text").textContent = captions.sc3[1];
+  }, 9.1);
+  tl.fromTo("#caption-bar",
+    { opacity: 0, y: 20, xPercent: -50 },
+    { opacity: 1, y: 0, xPercent: -50, duration: 0.35, ease: "back.out(1.5)", immediateRender: false },
+    9.1
+  );
+
+  /* Basketball drop and bounce */
+  tl.set("#basketball", { opacity: 1, x: 930, y: -60, rotation: 0 }, 8.8);
+  tl.to("#basketball", { y: 500, rotation: 540, duration: 0.3, ease: "power2.in", overwrite: "auto" }, 8.8);
+  tl.to("#basketball", { y: 420, rotation: 630, duration: 0.1, ease: "power2.out", overwrite: "auto" }, 9.1);
+  tl.to("#basketball", { y: 500, rotation: 720, duration: 0.08, ease: "power2.in", overwrite: "auto" }, 9.2);
+  tl.to("#basketball", { x: 2000, y: 300, rotation: 1080, opacity: 0, duration: 0.35, ease: "power3.in", overwrite: "auto" }, 9.35);
+
+  /* Exit */
+  tl.to("#caption-bar", { opacity: 0, xPercent: -50, duration: 0.25, ease: "power2.in" }, 11.6);
+  tl.to("#flash", { opacity: 0.15, duration: 0.06, overwrite: "auto" }, 11.85);
+  tl.to("#flash", { opacity: 0, duration: 0.12, overwrite: "auto" }, 11.91);
+  tl.to("#sc3", { opacity: 0, duration: 0.2, ease: "power2.in" }, 11.9);
+
+  /* ── SCENE 5: Chicago Bulls logo zoom  12 → 15s ───────────── */
+  tl.set("#bulls-logo", { opacity: 1, scale: 0.3 }, 12.0);
+  tl.to("#bulls-logo", { scale: 1.0, duration: 3.0, ease: "power2.out" }, 12.0);
+
+  tl.set("#sc1", { opacity: 1, immediateRender: true }, 3);
+
+  tl.set("#sc1", { clipPath: "inset(0 100% 0 0)", immediateRender: true }, 3);
+
+  tl.to("#sc1", { keyframes: {
+    "0%": { width: 1280, height: 720 },
+    "45.8%": { width: 1005, height: 565 },
+    "79%": { width: 1510, height: 849 },
+    "100%": { width: 1701, height: 956 }
+  }, duration: 1.2 }, 3);
+
+  tl.set("#sc2", { opacity: 1, immediateRender: true }, 6);
+
+  tl.set("#sc2", { scale: 0.75, immediateRender: true }, 6);
+
+  tl.set("#sc2", { rotation: -5, immediateRender: true }, 6);
+
+  tl.to("#sc2", { rotation: 0, duration: 0.55, ease: "back.out(1.2)" }, 6);
+
+  tl.to("#sc2", { keyframes: { "0%": { scaleX: 1, scaleY: 1 }, "18.6%": { scaleX: 1, scaleY: 1 }, "100%": { scaleX: 1.323, scaleY: 1.324 } }, duration: 2.963 }, 6);
+
+  tl.set("#sc3", { opacity: 1, immediateRender: true }, 9);
+
+  tl.set("#sc3", { scale: 0.92, immediateRender: true }, 9);
+
+  tl.set("#sc3", { width: 1448, height: 814, immediateRender: true }, 0);
+
+  tl.to("#sc3", { keyframes: {
+    "0%": { y: 80, data: "hf-hold", x: 0 },
+    "8.8%": { y: 80, data: "hf-hold", x: 0 },
+    "66.923%": { x: -434, y: -12 },
+    "88.9%": { x: -611, y: -346 },
+    "100%": { x: -657, y: -462 }
+  }, duration: 11.367 }, 0);
+
+  window.__timelines["basketball-promo"] = tl;
+})();
+</script>
+</body>
+</html>

@@ -9,11 +9,20 @@ A modern web application for tracking basketball game statistics in real time. D
 </p>
 
 <p align="center">
-  <a href="https://play-maker.dalejorodriguez.workers.dev">
-    <img src="https://github.com/dalerodr/play-maker/blob/main/screenshots/Bulls Utah 97 - Game Summary.png" alt="Game Summary" width="300">
+  <video
+    src="https://github.com/dalerodr/play-maker/blob/main/play-maker-hyperframes-video/video-presentation.mp4"
+    width="650"
+    controls
+    preload="metadata"
+  ></video>
+</p>
+
+<p align="center">
+  <a href="https://github.com/dalerodr/play-maker/blob/main/screenshots/Bulls Utah 97 - Game Summary.png">
+    <img src="https://github.com/dalerodr/play-maker/blob/main/screenshots/Bulls Utah 97 - Game Summary.png" alt="Game Summary" width="500">
   </a>
-  <a href="https://play-maker.dalejorodriguez.workers.dev">
-    <img src="https://github.com/dalerodr/play-maker/blob/main/screenshots/Bulls Utah 97 - Team Settings.png" alt="Team Settings" width="300">
+  <a href="https://github.com/dalerodr/play-maker/blob/main/screenshots/Bulls Utah 97 - Team Settings.png">
+    <img src="https://github.com/dalerodr/play-maker/blob/main/screenshots/Bulls Utah 97 - Team Settings.png" alt="Team Settings" width="500">
   </a>
 </p>
 
