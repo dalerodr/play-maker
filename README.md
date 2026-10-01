@@ -8,14 +8,14 @@ A modern web application for tracking basketball game statistics in real time. D
   </a>
 </p>
 
-<p align="center">
+<div align="center">
   <video
-    src="https://github.com/dalerodr/play-maker/blob/main/play-maker-hyperframes-video/video-presentation.mp4"
-    width="650"
+    src="https://github.com/user-attachments/assets/357468f9-0a06-4ed4-9622-d9991f09ae35"
     controls
     preload="metadata"
+    width="100%"
   ></video>
-</p>
+</div>
 
 <p align="center">
   <a href="https://github.com/dalerodr/play-maker/blob/main/screenshots/Bulls Utah 97 - Game Summary.png">
