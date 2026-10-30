@@ -1,0 +1,1490 @@
+{
+  "version": 1,
+  "historyId": "03da3462-445e-4a06-9fc5-856c9cc3a375",
+  "currentRevision": "297f18df-392c-4c0c-81d6-b26456c06779",
+  "pendingChanges": false,
+  "files": {
+    "README.md": {
+      "hash": "41cf4bc23d0a8f6acf042c060ccf85c74b7b8b75a5ae798baf896d28f6af8470",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/41/41cf4bc23d0a8f6acf042c060ccf85c74b7b8b75a5ae798baf896d28f6af8470"
+    },
+    "assets/audio/bgm.mp3": {
+      "hash": "9c2e1f80e044d499c7d9240d2ff4f4ad249fff0fb00315478c30e262d6016ba5",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/9c/9c2e1f80e044d499c7d9240d2ff4f4ad249fff0fb00315478c30e262d6016ba5"
+    },
+    "assets/fonts/BebasNeue-Regular.woff2": {
+      "hash": "441b026df205d28954f61b6989c7bbd228c0adff42f746a266c6a5d89134bc34",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/44/441b026df205d28954f61b6989c7bbd228c0adff42f746a266c6a5d89134bc34"
+    },
+    "assets/fonts/Outfit-Variable.woff2": {
+      "hash": "92684e4acde79ef07758cd09380b7e01e9824d8b061eddeda046f78c166d7b12",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/92/92684e4acde79ef07758cd09380b7e01e9824d8b061eddeda046f78c166d7b12"
+    },
+    "assets/screens/substitutions.png": {
+      "hash": "cdbff356e0f2cc7438e57b0cc5d73d99d0187e6a84ed21e438d724908d3140d8",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/cd/cdbff356e0f2cc7438e57b0cc5d73d99d0187e6a84ed21e438d724908d3140d8"
+    },
+    "assets/screens/team-settings.png": {
+      "hash": "d099080c58bfff9d545336bd3823fc5f42a13daaeef51a2aed8cc38dfe88da96",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/d0/d099080c58bfff9d545336bd3823fc5f42a13daaeef51a2aed8cc38dfe88da96"
+    },
+    "audio/bgm.mp3": {
+      "hash": "03c831cc2ebf34ea73f88957dc0760ce41018de0f40f619fa16cfd9334b36f95",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/03/03c831cc2ebf34ea73f88957dc0760ce41018de0f40f619fa16cfd9334b36f95"
+    },
+    "compositions/tour.html": {
+      "hash": "81ab5641b12f2e280844ddafb3d6f2c64bc52b6525cdfc4e14cbdbcf165b119b",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/81/81ab5641b12f2e280844ddafb3d6f2c64bc52b6525cdfc4e14cbdbcf165b119b"
+    },
+    "index.html": {
+      "hash": "3ffa983b9f6e880749c446e20244da3abd58bb364d7f82c400dd9d6d071a6c59",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/3f/3ffa983b9f6e880749c446e20244da3abd58bb364d7f82c400dd9d6d071a6c59"
+    },
+    "package.json": {
+      "hash": "f8f51132df58dfb44ce39004dc692d59ba0efa7ae4ec8e58c9e7f5f833642bc2",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/f8/f8f51132df58dfb44ce39004dc692d59ba0efa7ae4ec8e58c9e7f5f833642bc2"
+    },
+    "pnpm-lock.yaml": {
+      "hash": "8e0bab5e1d04687c0acdf5e651e51715b3891de788a66f843e28e29344e5a5ef",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/8e/8e0bab5e1d04687c0acdf5e651e51715b3891de788a66f843e28e29344e5a5ef"
+    },
+    "pnpm-workspace.yaml": {
+      "hash": "5c9b3bec4993b386837bffefba64b354b407f323e2ac56e5c6bca44cbaa87ae7",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/5c/5c9b3bec4993b386837bffefba64b354b407f323e2ac56e5c6bca44cbaa87ae7"
+    },
+    "screenshots/Bulls Utah 97 - Full Screen.png": {
+      "hash": "a5d9979a0ccdcea4ccd775f15bf7929a980faddea761a019b405ba4d12e2b6a0",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/a5/a5d9979a0ccdcea4ccd775f15bf7929a980faddea761a019b405ba4d12e2b6a0"
+    },
+    "screenshots/Bulls Utah 97 - Game Summary.png": {
+      "hash": "b49d23a5e0687ab0b12016aaf3f45278387d83cc8e331b43f454bd6502a5a83c",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/b4/b49d23a5e0687ab0b12016aaf3f45278387d83cc8e331b43f454bd6502a5a83c"
+    },
+    "screenshots/Bulls Utah 97 - Team Settings.png": {
+      "hash": "d3986fda86519d20a3a27d4cf32cc1c940b346045bdc826f20e49dced22664ea",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/d3/d3986fda86519d20a3a27d4cf32cc1c940b346045bdc826f20e49dced22664ea"
+    },
+    "screenshots/Cambios.png": {
+      "hash": "4719cb0f024fc770999ceec9065c013c1f5f1f58952401bc91ae2f266117e145",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/47/4719cb0f024fc770999ceec9065c013c1f5f1f58952401bc91ae2f266117e145"
+    },
+    "screenshots/Chicago Bulls.png": {
+      "hash": "bf4cbaad91d2c3ac9b27c8cc33b0fea20874714e3cdb3dcbb0abb46573dd5537",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/bf/bf4cbaad91d2c3ac9b27c8cc33b0fea20874714e3cdb3dcbb0abb46573dd5537"
+    },
+    "screenshots/Editar equipos.png": {
+      "hash": "042936e4d82c13c89f664f9c867be3ff121cde695b6a060e8237e1a02c0e8281",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/04/042936e4d82c13c89f664f9c867be3ff121cde695b6a060e8237e1a02c0e8281"
+    },
+    "screenshots/Home.png": {
+      "hash": "240cf9d6a021aa7574321fa9ecc83c27d200174a38b103459f9effd0f3f0c1ba",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/24/240cf9d6a021aa7574321fa9ecc83c27d200174a38b103459f9effd0f3f0c1ba"
+    },
+    "screenshots/Resumen.png": {
+      "hash": "39c4aaa0db712b64916966b5d6801973fc75b22b527bc7bab54cde255a3346d7",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/39/39c4aaa0db712b64916966b5d6801973fc75b22b527bc7bab54cde255a3346d7"
+    },
+    "screenshots/Utah Jazz.png": {
+      "hash": "0f416146ed482ba1b13b567f248a532850342d44cb4b8e30bd4f4de941d8f672",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/0f/0f416146ed482ba1b13b567f248a532850342d44cb4b8e30bd4f4de941d8f672"
+    },
+    "screenshots/bulls-bg 2.png": {
+      "hash": "b1de19522e47e806f12f312f943a7092f1511728048d9f2563e3b946441817a3",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/b1/b1de19522e47e806f12f312f943a7092f1511728048d9f2563e3b946441817a3"
+    },
+    "screenshots/bulls-bg 3.png": {
+      "hash": "997eaa8aa22c5156d92598738abbebefc94d70d0831fb844f73decab1c0951fb",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/99/997eaa8aa22c5156d92598738abbebefc94d70d0831fb844f73decab1c0951fb"
+    },
+    "assets/brand/bulls-bg.png": {
+      "hash": "6eac787cc1bc763b422db57645d10d4c4c2c8abff82de009fdeded40b52bb4a0",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/6e/6eac787cc1bc763b422db57645d10d4c4c2c8abff82de009fdeded40b52bb4a0"
+    },
+    "assets/screens/box-score.png": {
+      "hash": "97007375f0a36504a0d70ea406859248a7fe9e763475deb295f49ae313f397b4",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/97/97007375f0a36504a0d70ea406859248a7fe9e763475deb295f49ae313f397b4"
+    },
+    "assets/screens/home.png": {
+      "hash": "8d67e201fb95aa4e06ed09f8759ccdb9960e744832f4cce0692ebc12328ff992",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/8d/8d67e201fb95aa4e06ed09f8759ccdb9960e744832f4cce0692ebc12328ff992"
+    },
+    "assets/screens/live.png": {
+      "hash": "24057641d50fcc984e5ea84ce2f1a7f695abc4ccbf4edfcb757b6194a3b41d52",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/24/24057641d50fcc984e5ea84ce2f1a7f695abc4ccbf4edfcb757b6194a3b41d52"
+    },
+    "screenshots/bulls-bg.png": {
+      "hash": "6eac787cc1bc763b422db57645d10d4c4c2c8abff82de009fdeded40b52bb4a0",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/6e/6eac787cc1bc763b422db57645d10d4c4c2c8abff82de009fdeded40b52bb4a0"
+    },
+    "video-presentation.mp4": {
+      "hash": "4bb666ad0c7be4bd23e4e3c16ef20fa6b97515f9c3fa48ba9e956125c3330e17",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/4b/4bb666ad0c7be4bd23e4e3c16ef20fa6b97515f9c3fa48ba9e956125c3330e17"
+    },
+    "assets/screens/box-score-card.png": {
+      "hash": "97007375f0a36504a0d70ea406859248a7fe9e763475deb295f49ae313f397b4",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/97/97007375f0a36504a0d70ea406859248a7fe9e763475deb295f49ae313f397b4"
+    },
+    "assets/screens/live-card.png": {
+      "hash": "24057641d50fcc984e5ea84ce2f1a7f695abc4ccbf4edfcb757b6194a3b41d52",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/24/24057641d50fcc984e5ea84ce2f1a7f695abc4ccbf4edfcb757b6194a3b41d52"
+    },
+    "assets/screens/team-settings-card.png": {
+      "hash": "d099080c58bfff9d545336bd3823fc5f42a13daaeef51a2aed8cc38dfe88da96",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/d0/d099080c58bfff9d545336bd3823fc5f42a13daaeef51a2aed8cc38dfe88da96"
+    },
+    "hyperframes.json": {
+      "hash": "35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/35/35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7"
+    },
+    "assets/audio/narration-main.mp3": {
+      "hash": "7b30effaa1fd2f7fc8f6721ae99e0470ca7b7aec9bdc7c71c70aba985a846318",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/7b/7b30effaa1fd2f7fc8f6721ae99e0470ca7b7aec9bdc7c71c70aba985a846318"
+    },
+    "assets/audio/narration-cta.mp3": {
+      "hash": "a34797d41709710ac5997fd43e24b09766233ca2cc471dd14842fd0a9d95a87c",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/a3/a34797d41709710ac5997fd43e24b09766233ca2cc471dd14842fd0a9d95a87c"
+    },
+    "assets/audio/bgm-24s.mp3": {
+      "hash": "c08cd2a352b306fa21930df5692194489c514305aafa6c50f1c4f51b0baeb091",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/c0/c08cd2a352b306fa21930df5692194489c514305aafa6c50f1c4f51b0baeb091"
+    },
+    "assets/sfx/whoosh.mp3": {
+      "hash": "c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/c2/c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30"
+    },
+    "assets/sfx/chime.mp3": {
+      "hash": "74823b1b27703c56e0652db838f503c150ce9c2442d47d27430af3d5121d6d12",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/74/74823b1b27703c56e0652db838f503c150ce9c2442d47d27430af3d5121d6d12"
+    },
+    "assets/sfx/pop.mp3": {
+      "hash": "19ab7193f626ff57fdeef60b45543bac416fcbcec803cfb417abe4b271c1b352",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/19/19ab7193f626ff57fdeef60b45543bac416fcbcec803cfb417abe4b271c1b352"
+    },
+    "assets/sfx/click-soft.mp3": {
+      "hash": "075e17bdac5c13662a1c9530050e0046f81d4138e00eb3bf30427a7b4404103d",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/07/075e17bdac5c13662a1c9530050e0046f81d4138e00eb3bf30427a7b4404103d"
+    },
+    "assets/screens/home-bulls.png": {
+      "hash": "240cf9d6a021aa7574321fa9ecc83c27d200174a38b103459f9effd0f3f0c1ba",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/24/240cf9d6a021aa7574321fa9ecc83c27d200174a38b103459f9effd0f3f0c1ba"
+    },
+    "assets/screens/resumen-bulls.png": {
+      "hash": "39c4aaa0db712b64916966b5d6801973fc75b22b527bc7bab54cde255a3346d7",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/39/39c4aaa0db712b64916966b5d6801973fc75b22b527bc7bab54cde255a3346d7"
+    },
+    "assets/screens/editar-equipos-bulls.png": {
+      "hash": "042936e4d82c13c89f664f9c867be3ff121cde695b6a060e8237e1a02c0e8281",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/04/042936e4d82c13c89f664f9c867be3ff121cde695b6a060e8237e1a02c0e8281"
+    },
+    "assets/screens/cambios-bulls.png": {
+      "hash": "4719cb0f024fc770999ceec9065c013c1f5f1f58952401bc91ae2f266117e145",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/47/4719cb0f024fc770999ceec9065c013c1f5f1f58952401bc91ae2f266117e145"
+    },
+    "assets/audio/narration-main-norm.mp3": {
+      "hash": "97909df1397eae0404d23b59c15867f77ef211784f820fbc3499e701511bdb0a",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/97/97909df1397eae0404d23b59c15867f77ef211784f820fbc3499e701511bdb0a"
+    },
+    "assets/audio/narration-cta-norm.mp3": {
+      "hash": "1a57b484f5f8a969b234e553b0b52f29437ae291ca00db1f20f0ac953c3311df",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/1a/1a57b484f5f8a969b234e553b0b52f29437ae291ca00db1f20f0ac953c3311df"
+    },
+    "assets/brand/play-maker-mark.svg": {
+      "hash": "3056b25811572dbfa70d2db5d45b44d9c3542ae3e92a205790467b927d4bba4c",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/30/3056b25811572dbfa70d2db5d45b44d9c3542ae3e92a205790467b927d4bba4c"
+    },
+    "assets/screens/home-card-bulls.png": {
+      "hash": "240cf9d6a021aa7574321fa9ecc83c27d200174a38b103459f9effd0f3f0c1ba",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/24/240cf9d6a021aa7574321fa9ecc83c27d200174a38b103459f9effd0f3f0c1ba"
+    },
+    "assets/screens/resumen-card-bulls.png": {
+      "hash": "39c4aaa0db712b64916966b5d6801973fc75b22b527bc7bab54cde255a3346d7",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/39/39c4aaa0db712b64916966b5d6801973fc75b22b527bc7bab54cde255a3346d7"
+    },
+    "assets/screens/editar-card-bulls.png": {
+      "hash": "042936e4d82c13c89f664f9c867be3ff121cde695b6a060e8237e1a02c0e8281",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/04/042936e4d82c13c89f664f9c867be3ff121cde695b6a060e8237e1a02c0e8281"
+    },
+    "assets/brand/play-maker-mark-end.svg": {
+      "hash": "3056b25811572dbfa70d2db5d45b44d9c3542ae3e92a205790467b927d4bba4c",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/30/3056b25811572dbfa70d2db5d45b44d9c3542ae3e92a205790467b927d4bba4c"
+    },
+    "play-maker-tour.mp4": {
+      "hash": "855f820049558cb20df92bc1266d761d353ef976478dfc7d8262751aa83f6397",
+      "content": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/85/855f820049558cb20df92bc1266d761d353ef976478dfc7d8262751aa83f6397"
+    }
+  },
+  "revisions": {
+    "ff2c0a42-90ef-4bdc-a953-ed72745c7145": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793368975581,
+      "endedAt": 1793368975586,
+      "files": {
+        "assets/screens/box-score-card.png": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/97/97007375f0a36504a0d70ea406859248a7fe9e763475deb295f49ae313f397b4"
+        },
+        "assets/screens/live-card.png": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/24/24057641d50fcc984e5ea84ce2f1a7f695abc4ccbf4edfcb757b6194a3b41d52"
+        },
+        "assets/screens/team-settings-card.png": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/d0/d099080c58bfff9d545336bd3823fc5f42a13daaeef51a2aed8cc38dfe88da96"
+        },
+        "compositions/tour.html": {
+          "before": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/ff/ff2394424ae8fe489f8fb477e813f02212ec21499bc3a3a27f84959b2a1e5047",
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/68/68dec2ff86e7f33adc017e256f9e22e82a38f7ebc55b670f50a6c6756fef724f"
+        }
+      }
+    },
+    "2f14649e-dea1-461d-80ee-64d7e4e6ec53": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793369028433,
+      "endedAt": 1793369028433,
+      "files": {
+        "compositions/tour.html": {
+          "before": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/68/68dec2ff86e7f33adc017e256f9e22e82a38f7ebc55b670f50a6c6756fef724f",
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/47/47a7d1a17ca5e5efa21e1b2c321fdcfde8d4061515f1db30b3b729c8c98747d8"
+        }
+      }
+    },
+    "b16517ad-2ac1-4972-9214-d00a95c04b44": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793369197210,
+      "endedAt": 1793369197212,
+      "files": {
+        "compositions/tour.html": {
+          "before": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/47/47a7d1a17ca5e5efa21e1b2c321fdcfde8d4061515f1db30b3b729c8c98747d8",
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/6c/6ca75eab4f505c197d0e71f5ab390561d1e512a2635666ed42d43df198023617"
+        },
+        "hyperframes.json": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/35/35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7"
+        },
+        "index.html": {
+          "before": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/42/42a7441758a9ccd85ebbc41d9f6a084eed66c0ede7ab87f9de96a0f7497647d4",
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/59/5952e3376858fefcdb2df8c90e1856f8ba2acefaae78e16d9af02f2141f80a9c"
+        }
+      }
+    },
+    "9a308607-ea57-4311-a092-148b1ce414a2": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793369240918,
+      "endedAt": 1793369241544,
+      "files": {
+        "assets/audio/bgm.mp3": {
+          "before": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/03/03c831cc2ebf34ea73f88957dc0760ce41018de0f40f619fa16cfd9334b36f95",
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/9c/9c2e1f80e044d499c7d9240d2ff4f4ad249fff0fb00315478c30e262d6016ba5"
+        }
+      }
+    },
+    "36ae10ed-67fa-470b-82a1-338f3103276a": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793372714478,
+      "endedAt": 1793372716479,
+      "files": {
+        "assets/audio/narration-main.mp3": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/e3/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    "c7c13e63-59fc-40f7-9750-d1e5fc8506db": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793372734394,
+      "endedAt": 1793372736698,
+      "files": {
+        "assets/audio/narration-cta.mp3": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/e3/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "assets/audio/narration-main.mp3": {
+          "before": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/e3/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/09/09060af18a32c802a7f2358470af977f2191a270c04018e16806e9a1ef8a367c"
+        }
+      }
+    },
+    "c3c13582-376d-48a6-a96d-6bec5633c4bb": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793372740776,
+      "endedAt": 1793372742777,
+      "files": {
+        "assets/audio/narration-cta.mp3": {
+          "before": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/e3/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/a3/a34797d41709710ac5997fd43e24b09766233ca2cc471dd14842fd0a9d95a87c"
+        }
+      }
+    },
+    "89561693-ba97-48bf-98b4-52028a97b091": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793372911250,
+      "endedAt": 1793372913252,
+      "files": {
+        "assets/audio/narration-main.mp3": {
+          "before": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/09/09060af18a32c802a7f2358470af977f2191a270c04018e16806e9a1ef8a367c",
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/e3/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    "a6b16b4f-6633-4d81-b16e-d5fe0a36e659": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793372927935,
+      "endedAt": 1793372929935,
+      "files": {
+        "assets/audio/narration-main.mp3": {
+          "before": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/e3/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/7b/7b30effaa1fd2f7fc8f6721ae99e0470ca7b7aec9bdc7c71c70aba985a846318"
+        }
+      }
+    },
+    "6418f3ba-4af7-4eae-9917-9f9ee1856e5a": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793373043058,
+      "endedAt": 1793373045373,
+      "files": {
+        "assets/audio/bgm-24s.mp3": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/c0/c08cd2a352b306fa21930df5692194489c514305aafa6c50f1c4f51b0baeb091"
+        }
+      }
+    },
+    "a353bd9c-e4be-4909-b492-1965ddc767fa": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793373429737,
+      "endedAt": 1793373431739,
+      "files": {
+        "assets/sfx/chime.mp3": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/74/74823b1b27703c56e0652db838f503c150ce9c2442d47d27430af3d5121d6d12"
+        },
+        "assets/sfx/click-soft.mp3": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/07/075e17bdac5c13662a1c9530050e0046f81d4138e00eb3bf30427a7b4404103d"
+        },
+        "assets/sfx/pop.mp3": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/19/19ab7193f626ff57fdeef60b45543bac416fcbcec803cfb417abe4b271c1b352"
+        },
+        "assets/sfx/whoosh.mp3": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/c2/c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30"
+        }
+      }
+    },
+    "06fa4595-54fc-47a3-b951-9ef1107b2c50": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793373433400,
+      "endedAt": 1793373436815,
+      "files": {
+        "assets/audio/narration-cta-norm.mp3": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/bd/bd4aaec7545fb49262c4689ed470ead4f00cbd9c39c14914aa07ae984f0a062b"
+        },
+        "assets/audio/narration-main-norm.mp3": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/97/97909df1397eae0404d23b59c15867f77ef211784f820fbc3499e701511bdb0a"
+        },
+        "assets/screens/cambios-bulls.png": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/47/4719cb0f024fc770999ceec9065c013c1f5f1f58952401bc91ae2f266117e145"
+        },
+        "assets/screens/editar-equipos-bulls.png": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/04/042936e4d82c13c89f664f9c867be3ff121cde695b6a060e8237e1a02c0e8281"
+        },
+        "assets/screens/home-bulls.png": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/24/240cf9d6a021aa7574321fa9ecc83c27d200174a38b103459f9effd0f3f0c1ba"
+        },
+        "assets/screens/resumen-bulls.png": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/39/39c4aaa0db712b64916966b5d6801973fc75b22b527bc7bab54cde255a3346d7"
+        }
+      }
+    },
+    "53b2f691-78bd-4ae3-b941-d74a3527130d": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793373548520,
+      "endedAt": 1793373550521,
+      "files": {
+        "assets/brand/play-maker-mark.svg": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/30/3056b25811572dbfa70d2db5d45b44d9c3542ae3e92a205790467b927d4bba4c"
+        }
+      }
+    },
+    "0a331850-a4da-4875-b1bf-25f8418b19f8": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793373626279,
+      "endedAt": 1793373628280,
+      "files": {
+        "compositions/tour.html": {
+          "before": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/6c/6ca75eab4f505c197d0e71f5ab390561d1e512a2635666ed42d43df198023617",
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/7b/7bbcfe7aff5f6866b62ed1a650e3c2865c228000ea7723058edabc921b15f1ce"
+        }
+      }
+    },
+    "06255b66-6823-4556-b92f-c79f45ed4eaf": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793373629434,
+      "endedAt": 1793373631436,
+      "files": {
+        "assets/audio/narration-cta-norm.mp3": {
+          "before": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/bd/bd4aaec7545fb49262c4689ed470ead4f00cbd9c39c14914aa07ae984f0a062b",
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/1a/1a57b484f5f8a969b234e553b0b52f29437ae291ca00db1f20f0ac953c3311df"
+        }
+      }
+    },
+    "0c986613-54b1-44ce-a965-f45fc97ccaa4": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793373637389,
+      "endedAt": 1793373639390,
+      "files": {
+        "index.html": {
+          "before": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/59/5952e3376858fefcdb2df8c90e1856f8ba2acefaae78e16d9af02f2141f80a9c",
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/3f/3ffa983b9f6e880749c446e20244da3abd58bb364d7f82c400dd9d6d071a6c59"
+        }
+      }
+    },
+    "1ebc253f-3866-41cc-bf04-a81eb1b364d2": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793373665572,
+      "endedAt": 1793373667574,
+      "files": {
+        "assets/screens/editar-card-bulls.png": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/04/042936e4d82c13c89f664f9c867be3ff121cde695b6a060e8237e1a02c0e8281"
+        },
+        "assets/screens/home-card-bulls.png": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/24/240cf9d6a021aa7574321fa9ecc83c27d200174a38b103459f9effd0f3f0c1ba"
+        },
+        "assets/screens/resumen-card-bulls.png": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/39/39c4aaa0db712b64916966b5d6801973fc75b22b527bc7bab54cde255a3346d7"
+        }
+      }
+    },
+    "29c031c9-6b8a-4f8c-ba37-102f2593dd3b": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793373670807,
+      "endedAt": 1793373675640,
+      "files": {
+        "compositions/tour.html": {
+          "before": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/7b/7bbcfe7aff5f6866b62ed1a650e3c2865c228000ea7723058edabc921b15f1ce",
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/4c/4c942b07875b3f1e80637eb612f03893b0075f2d5bf07dafa235bf3f89fa1929"
+        }
+      }
+    },
+    "c7bab2cf-808a-4ba9-a9fa-95da3235db52": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793373692379,
+      "endedAt": 1793373695006,
+      "files": {
+        "assets/brand/play-maker-mark-end.svg": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/30/3056b25811572dbfa70d2db5d45b44d9c3542ae3e92a205790467b927d4bba4c"
+        },
+        "compositions/tour.html": {
+          "before": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/4c/4c942b07875b3f1e80637eb612f03893b0075f2d5bf07dafa235bf3f89fa1929",
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/29/29664b91fa4d55c9b105a16d617a20f2273c7f064257da0300cc43c2cba0cc5e"
+        }
+      }
+    },
+    "b5d15f10-2a9d-40db-8d92-4f59544c24fa": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793373732319,
+      "endedAt": 1793373734683,
+      "files": {
+        "compositions/tour.html": {
+          "before": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/29/29664b91fa4d55c9b105a16d617a20f2273c7f064257da0300cc43c2cba0cc5e",
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/81/81ab5641b12f2e280844ddafb3d6f2c64bc52b6525cdfc4e14cbdbcf165b119b"
+        }
+      }
+    },
+    "297f18df-392c-4c0c-81d6-b26456c06779": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793374417459,
+      "endedAt": 1793374419460,
+      "files": {
+        "play-maker-tour.mp4": {
+          "before": null,
+          "after": "/Users/danielalejorodriguez/.cache/hyperframes/history/03da3462-445e-4a06-9fc5-856c9cc3a375/blobs/85/855f820049558cb20df92bc1266d761d353ef976478dfc7d8262751aa83f6397"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "b5d15f10-2a9d-40db-8d92-4f59544c24fa",
+      "id": "f7598fe9-5eb2-42b0-b5b6-35e6440e0a0d"
+    },
+    "revisions": {
+      "ff2c0a42-90ef-4bdc-a953-ed72745c7145": [
+        {
+          "id": "8b32878d-fec8-49da-bd51-4147715ebf81",
+          "scope": "project",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 10000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793368980959,
+          "contentHash": "4558c583e74e599a3dcaf433f216570a88856d2cb8a3b691151abd9dd4413508",
+          "revision": "ff2c0a42-90ef-4bdc-a953-ed72745c7145",
+          "inputFingerprint": "897cd90471bc627eb81c27b50cbdeea6d03817f5e1ce366270293a3ba5cbe58b",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        }
+      ],
+      "2f14649e-dea1-461d-80ee-64d7e4e6ec53": [
+        {
+          "id": "a0654bf8-40be-4567-9271-13d7673f144c",
+          "scope": "project",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 10000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793369032225,
+          "contentHash": "a7beebdce25744c96841cb55f1e7806744c57704a6b50d3e29f7b7194575e557",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        }
+      ],
+      "9a308607-ea57-4311-a092-148b1ce414a2": [
+        {
+          "id": "2d1fb815-4428-4b5e-b447-47fe426b2546",
+          "scope": "project",
+          "report": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/.hyperframes/artifacts/checks/2d1fb815-4428-4b5e-b447-47fe426b2546.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 10000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793369271477,
+          "contentHash": "a7beebdce25744c96841cb55f1e7806744c57704a6b50d3e29f7b7194575e557",
+          "revision": "9a308607-ea57-4311-a092-148b1ce414a2",
+          "inputFingerprint": "fee96d1fec3cfed119b2be1d766c920d4642be380989da1439e8f93fb6fbb270",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "0c986613-54b1-44ce-a965-f45fc97ccaa4": [
+        {
+          "id": "0e5264c0-d7c9-4c82-ae72-f7f65b505942",
+          "scope": "project",
+          "metadata": {
+            "ok": false,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 10000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793373647652,
+          "contentHash": "e6d82df7b3b51713fec5b4cdac7160763e07520c148f9c31f73666501011c98c",
+          "revision": "0c986613-54b1-44ce-a965-f45fc97ccaa4",
+          "inputFingerprint": "c19603ae96993e4ea55d7237d9731e2c91e561d4d08f50a3900c951ee99ba8fc",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "3528ed22-62fa-4903-be48-ef755d05de17"
+        }
+      ],
+      "29c031c9-6b8a-4f8c-ba37-102f2593dd3b": [
+        {
+          "id": "ceb51242-1ac9-44ff-978e-1d97e6211e73",
+          "scope": "project",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 10000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793373682506,
+          "contentHash": "009557e72c1eae1f9d35ddab736b4409eda1e5abd8cc20314ed46f5b901f1048",
+          "revision": "29c031c9-6b8a-4f8c-ba37-102f2593dd3b",
+          "inputFingerprint": "992dd5e9be2dbc85235e2db96a1b9a1dec581e786c185d10f5b53f8aefd1e6bd",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "3528ed22-62fa-4903-be48-ef755d05de17"
+        }
+      ],
+      "b5d15f10-2a9d-40db-8d92-4f59544c24fa": [
+        {
+          "id": "f7598fe9-5eb2-42b0-b5b6-35e6440e0a0d",
+          "scope": "project",
+          "report": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/.hyperframes/artifacts/checks/f7598fe9-5eb2-42b0-b5b6-35e6440e0a0d.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 10000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793374040332,
+          "contentHash": "5e265d4c8549a695bf1ace39b66fde1f198e0c4f1d0f9048548ca6a2c0dd28af",
+          "revision": "b5d15f10-2a9d-40db-8d92-4f59544c24fa",
+          "inputFingerprint": "d4fd91be6a7e156c2e44cbe1274dd88087d683a9fd46cd37065540a0209d458e",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "f8911717-6355-46b4-a775-5208c7cfe2fd",
+        "scope": "project",
+        "report": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/.hyperframes/artifacts/checks/f8911717-6355-46b4-a775-5208c7cfe2fd.json",
+        "metadata": {
+          "ok": false,
+          "browserSkipped": true,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 10000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1793368955534,
+        "contentHash": "a478bed211f3c8bd406240f939ec4ae2272d847d3cb462db502126bb75fe65e5",
+        "revision": null,
+        "inputFingerprint": "adbb883126bbac70101967dfdb9763e11b3e92635de1a88b07801837ee93643c",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "id": "cda54966-160a-4afb-84b1-73012a2bf14e",
+        "scope": "project",
+        "report": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/.hyperframes/artifacts/checks/cda54966-160a-4afb-84b1-73012a2bf14e.json",
+        "metadata": {
+          "ok": false,
+          "browserSkipped": true,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 10000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1793368959476,
+        "contentHash": "a478bed211f3c8bd406240f939ec4ae2272d847d3cb462db502126bb75fe65e5",
+        "revision": null,
+        "inputFingerprint": "adbb883126bbac70101967dfdb9763e11b3e92635de1a88b07801837ee93643c",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": "b5d15f10-2a9d-40db-8d92-4f59544c24fa",
+      "id": "61bc575f-ca6a-4adb-a029-69aa7bccba22-3"
+    },
+    "revisions": {
+      "2f14649e-dea1-461d-80ee-64d7e4e6ec53": [
+        {
+          "scope": "full",
+          "id": "a2c463cc-1b8d-4d81-a4da-230c182b1fa0-0",
+          "time": 1.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "t=1.6"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369121799,
+          "contentHash": "78c2e03d743f58474aabcfbc4bd6f8df930e462e8e862e3bfa8597b84ff3434f",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "a2c463cc-1b8d-4d81-a4da-230c182b1fa0-1",
+          "time": 4.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "t=4.8"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369121799,
+          "contentHash": "c886edcb9eb5219c9424243b044ff7257206f971b058edf6b6290abdfd82a772",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "a2c463cc-1b8d-4d81-a4da-230c182b1fa0-2",
+          "time": 8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "t=8"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369121799,
+          "contentHash": "98bbf6e1b2c12f91c287c242bdbc98fadebc68a5383e3f1a6e03154082804511",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "a2c463cc-1b8d-4d81-a4da-230c182b1fa0-3",
+          "time": 11.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "t=11.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369121799,
+          "contentHash": "769bea78bf35cdb40328598f41e24d07c997e50b68219748ba31e5b7d5d05e36",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "a2c463cc-1b8d-4d81-a4da-230c182b1fa0-4",
+          "time": 14.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "t=14.4"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369121799,
+          "contentHash": "5ab504afac4a279a4c476c542bba13aa42dc115bee8db11c9a176fbdc8ef00ae",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "29067d70-f2a7-4953-8bcc-93a8c2b9cb33-0",
+          "time": 0,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369150822,
+          "contentHash": "da488da453fa8e1425064b29a2a1902d5c351b456c5a7f16c35380e5d1cf0fc7",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "29067d70-f2a7-4953-8bcc-93a8c2b9cb33-1",
+          "time": 2.95,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369150822,
+          "contentHash": "e1df4d7509958ca36dfa101a4a06e1fbee0f28fa0c6b5de4ac033a183ee74564",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "29067d70-f2a7-4953-8bcc-93a8c2b9cb33-2",
+          "time": 3.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369150822,
+          "contentHash": "90ddd4d6c983c648dcc43d83b68825fde2dbfe3aa641725946e40f106afa0931",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "29067d70-f2a7-4953-8bcc-93a8c2b9cb33-3",
+          "time": 6.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369150822,
+          "contentHash": "f82f317e5b3e717804f36e1bc3076bb0ca393e9a0ae7873d92a129af067f08e3",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "29067d70-f2a7-4953-8bcc-93a8c2b9cb33-4",
+          "time": 6.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369150822,
+          "contentHash": "fc69c7e3b811512173554add37f1bda5120746705808f003c5ea587c73388f65",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "29067d70-f2a7-4953-8bcc-93a8c2b9cb33-5",
+          "time": 9.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369150822,
+          "contentHash": "591ff549470822bdcf482882f4b7e8a1d618dd4c06fa487674dc95d7c743b5d0",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "29067d70-f2a7-4953-8bcc-93a8c2b9cb33-6",
+          "time": 9.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369150822,
+          "contentHash": "ce6dc54609c661aa8a9b99dd687454092af592404c09afb4e7e4fb7e35550bd3",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "29067d70-f2a7-4953-8bcc-93a8c2b9cb33-7",
+          "time": 12.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369150822,
+          "contentHash": "3f202e66a86136c635527ab0b033c99398006fee5a9f03aa61544c07c3547d60",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "29067d70-f2a7-4953-8bcc-93a8c2b9cb33-8",
+          "time": 13,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369150822,
+          "contentHash": "c5be2710566c352bf598296650704492ed808e7687b868aa9765f88c35dced62",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "29067d70-f2a7-4953-8bcc-93a8c2b9cb33-9",
+          "time": 13.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369150822,
+          "contentHash": "3f863fc2abb96f1dde8643ff4964325703c618547f47e18e1d4d8a413deb756b",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "29067d70-f2a7-4953-8bcc-93a8c2b9cb33-10",
+          "time": 15.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369150822,
+          "contentHash": "7550b6e285cd97b16536b876505566a98eff1b341b68469aadafe3b1d99a327f",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "29067d70-f2a7-4953-8bcc-93a8c2b9cb33-11",
+          "time": 15.95,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369150822,
+          "contentHash": "82a2e41ba517809f5b58a7da95b52f22e165cd40afabe2fa4b082bc45388d894",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        },
+        {
+          "scope": "full",
+          "id": "29067d70-f2a7-4953-8bcc-93a8c2b9cb33-12",
+          "time": 15.75,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793369150822,
+          "contentHash": "5a51d1c09169179b98c568b0b081e52595b0d02588620f3af1379f21617942f8",
+          "revision": "2f14649e-dea1-461d-80ee-64d7e4e6ec53",
+          "inputFingerprint": "835c34fe87beb47c9a0a1846cdc3987c3785791ccbcf8dc7a33e3f1aa65e8ae0",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "6049c022-5699-4984-9bd2-e7b9900b4b8c"
+        }
+      ],
+      "c7bab2cf-808a-4ba9-a9fa-95da3235db52": [
+        {
+          "scope": "full",
+          "id": "45809aa2-a19f-45ed-871b-89e2300fcc1f-0",
+          "image": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/.hyperframes/artifacts/snapshots-new/frame-00-at-1.5s.png",
+          "time": 1.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793373703661,
+          "contentHash": "b4ae4c01b477120b6937dab1ede1437af875f5e0f83a79ffddf5281110e80eec",
+          "revision": "c7bab2cf-808a-4ba9-a9fa-95da3235db52",
+          "inputFingerprint": "cd2c0a5974c1b2e3f2eb47bb1e3bad7a34a798cdc4cbacf1893ff7a66160f6b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "45809aa2-a19f-45ed-871b-89e2300fcc1f-1",
+          "image": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/.hyperframes/artifacts/snapshots-new/frame-01-at-6.5s.png",
+          "time": 6.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793373703661,
+          "contentHash": "9f60e8ccb6e4130ea240c91f4642f495df1a16a1f9eb0bb6de12fd5387d55eec",
+          "revision": "c7bab2cf-808a-4ba9-a9fa-95da3235db52",
+          "inputFingerprint": "cd2c0a5974c1b2e3f2eb47bb1e3bad7a34a798cdc4cbacf1893ff7a66160f6b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "45809aa2-a19f-45ed-871b-89e2300fcc1f-2",
+          "image": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/.hyperframes/artifacts/snapshots-new/frame-02-at-10.5s.png",
+          "time": 10.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793373703661,
+          "contentHash": "c3ec0271e07a4c8c9520e6055ae1932ce723a696850447596a850d68189f4146",
+          "revision": "c7bab2cf-808a-4ba9-a9fa-95da3235db52",
+          "inputFingerprint": "cd2c0a5974c1b2e3f2eb47bb1e3bad7a34a798cdc4cbacf1893ff7a66160f6b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "45809aa2-a19f-45ed-871b-89e2300fcc1f-3",
+          "image": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/.hyperframes/artifacts/snapshots-new/frame-03-at-14.5s.png",
+          "time": 14.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793373703661,
+          "contentHash": "d40ccb4b3756abff058ba8beb80540a2c6eef03af8d81a095e89fac440e9f22f",
+          "revision": "c7bab2cf-808a-4ba9-a9fa-95da3235db52",
+          "inputFingerprint": "cd2c0a5974c1b2e3f2eb47bb1e3bad7a34a798cdc4cbacf1893ff7a66160f6b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "45809aa2-a19f-45ed-871b-89e2300fcc1f-4",
+          "image": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/.hyperframes/artifacts/snapshots-new/frame-04-at-19s.png",
+          "time": 19,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793373703661,
+          "contentHash": "fbef7779adc8d20c054264d3a8c76047e6a5d8c6cbd514b40d3c6527d57a29a5",
+          "revision": "c7bab2cf-808a-4ba9-a9fa-95da3235db52",
+          "inputFingerprint": "cd2c0a5974c1b2e3f2eb47bb1e3bad7a34a798cdc4cbacf1893ff7a66160f6b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "45809aa2-a19f-45ed-871b-89e2300fcc1f-5",
+          "image": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/.hyperframes/artifacts/snapshots-new/frame-05-at-22s.png",
+          "time": 22,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793373703661,
+          "contentHash": "850679ac6b5e3fb35d2d22382680c72b4a993a1cefb941b16dccfbaa6d2994a4",
+          "revision": "c7bab2cf-808a-4ba9-a9fa-95da3235db52",
+          "inputFingerprint": "cd2c0a5974c1b2e3f2eb47bb1e3bad7a34a798cdc4cbacf1893ff7a66160f6b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "45809aa2-a19f-45ed-871b-89e2300fcc1f-6",
+          "image": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/.hyperframes/artifacts/snapshots-new/frame-06-at-23.75s.png",
+          "time": 23.75,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793373703661,
+          "contentHash": "0bb6e4949325251195b0bcfb593d32515636423e8355c2a9d3bf69505c92c58e",
+          "revision": "c7bab2cf-808a-4ba9-a9fa-95da3235db52",
+          "inputFingerprint": "cd2c0a5974c1b2e3f2eb47bb1e3bad7a34a798cdc4cbacf1893ff7a66160f6b4",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "b5d15f10-2a9d-40db-8d92-4f59544c24fa": [
+        {
+          "scope": "full",
+          "id": "61bc575f-ca6a-4adb-a029-69aa7bccba22-0",
+          "image": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/.hyperframes/artifacts/snapshots-check/frame-00-at-1.5s.png",
+          "time": 1.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793373739971,
+          "contentHash": "78098251cf395c3052012986016bbf8a46e56729d2f7c0af1beb8fbd89b24414",
+          "revision": "b5d15f10-2a9d-40db-8d92-4f59544c24fa",
+          "inputFingerprint": "d4fd91be6a7e156c2e44cbe1274dd88087d683a9fd46cd37065540a0209d458e",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "61bc575f-ca6a-4adb-a029-69aa7bccba22-1",
+          "image": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/.hyperframes/artifacts/snapshots-check/frame-01-at-6.5s.png",
+          "time": 6.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793373739971,
+          "contentHash": "5b5d1910f3e7b4c4666617c9adebd1571135b1c3e89f28758c215f49d384d5ae",
+          "revision": "b5d15f10-2a9d-40db-8d92-4f59544c24fa",
+          "inputFingerprint": "d4fd91be6a7e156c2e44cbe1274dd88087d683a9fd46cd37065540a0209d458e",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "61bc575f-ca6a-4adb-a029-69aa7bccba22-2",
+          "image": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/.hyperframes/artifacts/snapshots-check/frame-02-at-19s.png",
+          "time": 19,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793373739971,
+          "contentHash": "85ad59cc98560062b8291c610da3c43722b8d77d413c0ac2817c3dba6f91e566",
+          "revision": "b5d15f10-2a9d-40db-8d92-4f59544c24fa",
+          "inputFingerprint": "d4fd91be6a7e156c2e44cbe1274dd88087d683a9fd46cd37065540a0209d458e",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "61bc575f-ca6a-4adb-a029-69aa7bccba22-3",
+          "image": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/.hyperframes/artifacts/snapshots-check/frame-03-at-23.75s.png",
+          "time": 23.75,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793373739971,
+          "contentHash": "3a039951df7da9c07accf030ec89bc4d86a7e6a908232d9e6ac04c912151541d",
+          "revision": "b5d15f10-2a9d-40db-8d92-4f59544c24fa",
+          "inputFingerprint": "d4fd91be6a7e156c2e44cbe1274dd88087d683a9fd46cd37065540a0209d458e",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "3528ed22-62fa-4903-be48-ef755d05de17",
+      "completedAt": 1793373776938,
+      "output": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/play-maker-iphone-tour.mp4",
+      "status": "completed",
+      "revision": "b5d15f10-2a9d-40db-8d92-4f59544c24fa"
+    },
+    "retainedRevisions": [
+      "b5d15f10-2a9d-40db-8d92-4f59544c24fa",
+      "9a308607-ea57-4311-a092-148b1ce414a2"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

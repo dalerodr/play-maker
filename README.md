@@ -10,7 +10,7 @@ A modern web application for tracking basketball game statistics in real time. D
 
 <div align="center">
   <video
-    src="https://github.com/user-attachments/assets/357468f9-0a06-4ed4-9622-d9991f09ae35"
+    src="https://github.com/user-attachments/assets/5460b497-4383-412f-9a3a-f4fbddd6349e"
     controls
     preload="metadata"
     width="100%"

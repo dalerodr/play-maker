@@ -1,0 +1,1424 @@
+<template>
+  <style>
+    @font-face {
+      font-family: 'Bebas Neue';
+      src: url('assets/fonts/BebasNeue-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: block;
+    }
+    @font-face {
+      font-family: 'Outfit';
+      src: url('assets/fonts/Outfit-Variable.woff2') format('woff2');
+      font-weight: 300 800;
+      font-style: normal;
+      font-display: block;
+    }
+
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      perspective: 1600px;
+      background: var(--brand-ground, #08080A);
+      color: var(--brand-ink, #F5F2ED);
+      font-family: var(--font-body, 'Outfit'), sans-serif;
+    }
+
+    .stage {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    #court {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      object-fit: cover;
+      opacity: 0;
+      transform-origin: 50% 50%;
+    }
+
+    .court-grade {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      background:
+        radial-gradient(860px 700px at 76% 44%, rgba(206, 17, 65, 0.20), transparent 68%),
+        linear-gradient(90deg, #08080A 0%, rgba(8, 8, 10, 0.94) 30%, rgba(8, 8, 10, 0.44) 63%, rgba(8, 8, 10, 0.78) 100%),
+        linear-gradient(180deg, rgba(8, 8, 10, 0.60) 0%, transparent 22%, transparent 76%, rgba(8, 8, 10, 0.74) 100%);
+    }
+
+    .beam {
+      position: absolute;
+      left: 780px;
+      top: -220px;
+      width: 1260px;
+      height: 1360px;
+      opacity: 0;
+      transform-origin: 50% 50%;
+      background: radial-gradient(ellipse at 50% 42%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.035) 32%, transparent 68%);
+      filter: blur(12px);
+    }
+
+    .halftone {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 880px;
+      height: 540px;
+      opacity: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.11) 1px, transparent 1.2px);
+      background-size: 18px 18px;
+      -webkit-mask-image: linear-gradient(115deg, transparent 8%, #000 62%, transparent 100%);
+      mask-image: linear-gradient(115deg, transparent 8%, #000 62%, transparent 100%);
+    }
+
+    .ring {
+      position: absolute;
+      left: 1000px;
+      top: 160px;
+      width: 1240px;
+      height: 1240px;
+      border: 1px dashed rgba(255, 255, 255, 0.07);
+      border-radius: 50%;
+    }
+
+    .ring-small {
+      position: absolute;
+      left: 750px;
+      top: 400px;
+      width: 440px;
+      height: 440px;
+      border: 1px solid rgba(206, 17, 65, 0.20);
+      border-radius: 50%;
+    }
+
+    .phone-halo {
+      position: absolute;
+      left: 1430px;
+      top: 545px;
+      width: 900px;
+      height: 900px;
+      margin-left: -450px;
+      margin-top: -450px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(206, 17, 65, 0.34) 0%, rgba(206, 17, 65, 0.08) 38%, transparent 68%);
+      opacity: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .shockwave {
+      position: absolute;
+      left: 1430px;
+      top: 545px;
+      width: 520px;
+      height: 520px;
+      margin-left: -260px;
+      margin-top: -260px;
+      z-index: 19;
+      border: 2px solid rgba(255, 77, 109, 0.55);
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      box-shadow: 0 0 60px rgba(206, 17, 65, 0.26), inset 0 0 60px rgba(206, 17, 65, 0.12);
+    }
+
+    .brand-rail {
+      position: absolute;
+      left: 80px;
+      top: 54px;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      opacity: 0;
+    }
+
+    .brand-rail img {
+      width: 30px;
+      height: 30px;
+      display: block;
+    }
+
+    .brand-word {
+      font-family: var(--font-display, 'Bebas Neue'), sans-serif;
+      font-size: 24px;
+      letter-spacing: 0.20em;
+      line-height: 1;
+      color: var(--brand-ink, #F5F2ED);
+    }
+
+    .brand-meta {
+      margin-left: 6px;
+      padding-left: 16px;
+      border-left: 1px solid rgba(255, 255, 255, 0.16);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.19em;
+      line-height: 1;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .scorebug {
+      position: absolute;
+      right: 80px;
+      top: 48px;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      height: 54px;
+      box-sizing: border-box;
+      padding: 0 18px 0 16px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 9px;
+      background: rgba(10, 10, 12, 0.64);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(12px);
+      opacity: 0;
+    }
+
+    .score-live {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.17em;
+      line-height: 1;
+      color: #FF7890;
+    }
+
+    .score-live i {
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--brand-accent, #CE1141);
+      box-shadow: 0 0 12px rgba(206, 17, 65, 0.9);
+    }
+
+    .score-team {
+      font-family: var(--font-display, 'Bebas Neue'), sans-serif;
+      font-size: 25px;
+      letter-spacing: 0.07em;
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.66);
+    }
+
+    .score-num {
+      font-family: var(--font-display, 'Bebas Neue'), sans-serif;
+      font-size: 35px;
+      line-height: 1;
+      color: #FFFFFF;
+    }
+
+    .score-num.hot {
+      color: #FF4D6D;
+    }
+
+    .score-q {
+      margin-left: 4px;
+      padding-left: 14px;
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      line-height: 1.2;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .copy {
+      position: absolute;
+      left: 120px;
+      top: 284px;
+      width: 840px;
+      z-index: 12;
+    }
+
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      opacity: 0;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      line-height: 1;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.52);
+    }
+
+    .kicker .num {
+      color: var(--brand-accent-bright, #FF4D6D);
+      font-weight: 700;
+    }
+
+    .kicker .rule {
+      width: 42px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .copy h1 {
+      margin: 24px 0 0;
+      font-family: var(--font-display, 'Bebas Neue'), sans-serif;
+      font-size: 116px;
+      font-weight: 400;
+      line-height: 0.85;
+      letter-spacing: 0.012em;
+      text-transform: uppercase;
+      color: var(--brand-ink, #F5F2ED);
+    }
+
+    .line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .word {
+      display: inline-block;
+      opacity: 0;
+    }
+
+    .word.accent {
+      font-style: normal;
+      color: var(--brand-accent, #CE1141);
+    }
+
+    .body {
+      max-width: 690px;
+      margin: 28px 0 0;
+      opacity: 0;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.64);
+    }
+
+    .stat-row {
+      display: flex;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .stat {
+      width: 174px;
+      box-sizing: border-box;
+      padding: 17px 20px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-left: 3px solid var(--brand-accent, #CE1141);
+      border-radius: 9px;
+      background: rgba(10, 10, 12, 0.54);
+      opacity: 0;
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.22);
+    }
+
+    .stat b {
+      display: block;
+      font-family: var(--font-display, 'Bebas Neue'), sans-serif;
+      font-size: 55px;
+      font-weight: 400;
+      line-height: 0.78;
+      color: #FF4D6D;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 9px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.46);
+    }
+
+    .phone-wrap {
+      position: absolute;
+      left: 1430px;
+      top: 545px;
+      width: 414px;
+      height: 868px;
+      z-index: 20;
+      opacity: 1;
+      transform-style: preserve-3d;
+    }
+
+    .phone {
+      position: absolute;
+      inset: 0;
+      box-sizing: border-box;
+      padding: 12px;
+      border-radius: 58px;
+      border: 1px solid rgba(255, 255, 255, 0.17);
+      background: linear-gradient(145deg, #55555C 0%, #17171B 15%, #08080A 43%, #232329 72%, #4A4A51 100%);
+      box-shadow:
+        0 64px 130px rgba(0, 0, 0, 0.72),
+        0 18px 44px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(0, 0, 0, 0.9),
+        0 0 110px rgba(206, 17, 65, 0.19);
+    }
+
+    .phone::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border-radius: 54px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+
+    .phone-screen {
+      position: relative;
+      width: 390px;
+      height: 844px;
+      overflow: hidden;
+      border-radius: 47px;
+      background: #0A0A0A;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    .status-bar {
+      position: relative;
+      z-index: 16;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 390px;
+      height: 56px;
+      box-sizing: border-box;
+      padding: 10px 27px 0 29px;
+      background: #0A0A0A;
+      color: #FFFFFF;
+    }
+
+    .sb-time {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .sb-icons {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .sb-signal {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 11px;
+    }
+
+    .sb-signal i {
+      display: block;
+      width: 3px;
+      border-radius: 1px;
+      background: #FFFFFF;
+    }
+
+    .sb-signal i:nth-child(1) { height: 4px; }
+    .sb-signal i:nth-child(2) { height: 6px; }
+    .sb-signal i:nth-child(3) { height: 8px; }
+    .sb-signal i:nth-child(4) { height: 10px; }
+
+    .sb-wifi {
+      display: block;
+      width: 16px;
+      height: 12px;
+    }
+
+    .sb-battery {
+      position: relative;
+      display: block;
+      width: 25px;
+      height: 12px;
+      box-sizing: border-box;
+      padding: 1.5px;
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      border-radius: 3px;
+    }
+
+    .sb-battery i {
+      display: block;
+      width: 76%;
+      height: 100%;
+      border-radius: 1px;
+      background: #FFFFFF;
+    }
+
+    .sb-battery::after {
+      content: '';
+      position: absolute;
+      right: -3px;
+      top: 3px;
+      width: 2px;
+      height: 5px;
+      border-radius: 0 1px 1px 0;
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .app-area {
+      position: relative;
+      width: 390px;
+      height: 788px;
+      overflow: hidden;
+      background: #0A0A0A;
+    }
+
+    .screen-layer {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+    }
+
+    #s-home { opacity: 1; }
+
+    .screen-layer img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 0;
+    }
+
+    .chrome-mask-top {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 76px;
+      z-index: 13;
+      pointer-events: none;
+      background: linear-gradient(180deg, #0A0A0A 0%, #0A0A0A 78%, rgba(10, 10, 10, 0) 100%);
+    }
+
+    .browser-footer {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 14;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      height: 136px;
+      box-sizing: border-box;
+      padding-bottom: 15px;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.82) 32%, #0A0A0A 100%);
+    }
+
+    .url-pill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 292px;
+      height: 38px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 19px;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .url-lock {
+      position: relative;
+      width: 9px;
+      height: 8px;
+      margin-top: 2px;
+      border: 1.4px solid rgba(255, 255, 255, 0.56);
+      border-radius: 2px;
+    }
+
+    .url-lock::before {
+      content: '';
+      position: absolute;
+      left: 1px;
+      top: -6px;
+      width: 5px;
+      height: 6px;
+      border: 1.4px solid rgba(255, 255, 255, 0.56);
+      border-bottom: 0;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .home-indicator {
+      width: 132px;
+      height: 5px;
+      margin-top: 13px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.74);
+    }
+
+    .screen-sweep {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 58%;
+      height: 100%;
+      z-index: 22;
+      opacity: 0;
+      pointer-events: none;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.20) 48%, transparent 100%);
+    }
+
+    .screen-glare {
+      position: absolute;
+      inset: 0;
+      z-index: 20;
+      pointer-events: none;
+      background: linear-gradient(137deg, rgba(255, 255, 255, 0.075) 0%, rgba(255, 255, 255, 0.018) 27%, transparent 48%);
+    }
+
+    .tap-ring {
+      position: absolute;
+      left: 266px;
+      top: 384px;
+      z-index: 24;
+      width: 52px;
+      height: 52px;
+      margin-left: -26px;
+      margin-top: -26px;
+      border: 2px solid rgba(255, 77, 109, 0.85);
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      box-shadow: 0 0 22px rgba(206, 17, 65, 0.56), inset 0 0 18px rgba(206, 17, 65, 0.22);
+    }
+
+    .dynamic-island {
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      width: 112px;
+      height: 32px;
+      margin-left: -56px;
+      z-index: 30;
+      border-radius: 18px;
+      background: #000000;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.025);
+    }
+
+    .dynamic-island::after {
+      content: '';
+      position: absolute;
+      right: 13px;
+      top: 11px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 36% 32%, #26324A 0%, #0A0E16 44%, #000000 100%);
+      box-shadow: inset 0 0 0 1px rgba(110, 150, 220, 0.16);
+    }
+
+    .side-button {
+      position: absolute;
+      width: 3px;
+      border-radius: 2px;
+      background: linear-gradient(180deg, #35353B 0%, #151519 50%, #35353B 100%);
+    }
+
+    .side-button.vol-up { left: -3px; top: 176px; height: 34px; }
+    .side-button.vol-down { left: -3px; top: 224px; height: 52px; }
+    .side-button.vol-down-2 { left: -3px; top: 288px; height: 52px; }
+    .side-button.power { right: -3px; top: 248px; height: 82px; }
+
+    .deck {
+      position: absolute;
+      inset: 0;
+      z-index: 18;
+      pointer-events: none;
+    }
+
+    .deck-card {
+      position: absolute;
+      width: 414px;
+      height: 868px;
+      opacity: 0;
+    }
+
+    #deck1 { left: 1080px; top: 650px; z-index: 15; }
+    #deck2 { left: 1230px; top: 636px; z-index: 16; }
+    #deck3 { left: 1380px; top: 646px; z-index: 17; }
+
+    .deck-card .browser-footer {
+      height: 112px;
+      padding-bottom: 13px;
+    }
+
+    .deck-card .url-pill { display: none; }
+
+    .deck-card .home-indicator {
+      width: 116px;
+      margin-top: 0;
+    }
+
+    .deck-card .chrome-mask-top {
+      height: 76px;
+    }
+
+    .end-wash {
+      position: absolute;
+      inset: 0;
+      z-index: 14;
+      opacity: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(760px 640px at 74% 52%, rgba(206, 17, 65, 0.22), transparent 68%),
+        linear-gradient(90deg, rgba(8, 8, 10, 0.96) 0%, rgba(8, 8, 10, 0.72) 43%, rgba(8, 8, 10, 0.18) 78%, rgba(8, 8, 10, 0.42) 100%);
+    }
+
+    .end-copy {
+      position: absolute;
+      left: 120px;
+      top: 176px;
+      width: 780px;
+      z-index: 32;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .end-brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      opacity: 0;
+    }
+
+    .end-brand img {
+      display: block;
+      width: 58px;
+      height: 58px;
+      filter: drop-shadow(0 10px 22px rgba(206, 17, 65, 0.26));
+    }
+
+    .end-brand span {
+      font-family: var(--font-display, 'Bebas Neue'), sans-serif;
+      font-size: 39px;
+      letter-spacing: 0.17em;
+      line-height: 1;
+      color: var(--brand-ink, #F5F2ED);
+    }
+
+    .end-title {
+      margin: 30px 0 0;
+      font-family: var(--font-display, 'Bebas Neue'), sans-serif;
+      font-size: 100px;
+      font-weight: 400;
+      line-height: 0.83;
+      letter-spacing: 0.014em;
+      text-transform: uppercase;
+      color: var(--brand-ink, #F5F2ED);
+    }
+
+    .end-title .accent {
+      color: var(--brand-accent, #CE1141);
+    }
+
+    .end-sub {
+      margin: 26px 0 0;
+      opacity: 0;
+      font-size: 25px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      line-height: 1.4;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.52);
+    }
+
+    .end-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 32px;
+      padding: 21px 34px 20px 38px;
+      border-radius: 999px;
+      background: var(--brand-accent, #CE1141);
+      color: #FFFFFF;
+      opacity: 0;
+      box-shadow: 0 20px 48px rgba(206, 17, 65, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    }
+
+    .end-cta span:first-child {
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 1;
+    }
+
+    .end-cta .cta-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.16);
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .end-url {
+      position: absolute;
+      left: 120px;
+      bottom: 62px;
+      z-index: 32;
+      opacity: 0;
+      font-size: 19px;
+      font-weight: 500;
+      letter-spacing: 0.045em;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .streak {
+      position: absolute;
+      left: -300px;
+      height: 2px;
+      width: 300px;
+      opacity: 0;
+      z-index: 50;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.72), transparent);
+      transform: rotate(-14deg);
+      pointer-events: none;
+    }
+
+    .streak:nth-child(2n) {
+      height: 4px;
+      background: linear-gradient(90deg, transparent, rgba(255, 77, 109, 0.78), transparent);
+    }
+
+    .streak:nth-child(1) { top: 170px; width: 240px; }
+    .streak:nth-child(2) { top: 270px; width: 380px; }
+    .streak:nth-child(3) { top: 380px; width: 280px; }
+    .streak:nth-child(4) { top: 500px; width: 420px; }
+    .streak:nth-child(5) { top: 610px; width: 250px; }
+    .streak:nth-child(6) { top: 720px; width: 340px; }
+    .streak:nth-child(7) { top: 840px; width: 290px; }
+    .streak:nth-child(8) { top: 940px; width: 390px; }
+
+    .cut-flash {
+      position: absolute;
+      inset: 0;
+      z-index: 52;
+      opacity: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 73% 50%, rgba(255, 255, 255, 0.32), rgba(206, 17, 65, 0.10) 38%, transparent 70%);
+    }
+
+    .spark {
+      position: absolute;
+      z-index: 33;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #FF7890;
+      opacity: 0;
+      box-shadow: 0 0 14px rgba(255, 77, 109, 0.8);
+      pointer-events: none;
+    }
+
+    .spark:nth-child(1) { left: 105px; top: 640px; }
+    .spark:nth-child(2) { left: 310px; top: 690px; }
+    .spark:nth-child(3) { left: 505px; top: 625px; }
+    .spark:nth-child(4) { left: 690px; top: 700px; }
+    .spark:nth-child(5) { left: 230px; top: 760px; }
+    .spark:nth-child(6) { left: 588px; top: 775px; }
+    .spark:nth-child(7) { left: 760px; top: 660px; }
+    .spark:nth-child(8) { left: 410px; top: 790px; }
+
+    .vignette {
+      position: absolute;
+      inset: 0;
+      z-index: 40;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 50% 46%, transparent 34%, rgba(0, 0, 0, 0.56) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.28) 0%, transparent 18%, transparent 82%, rgba(0, 0, 0, 0.46) 100%);
+    }
+
+    .end-fade {
+      position: absolute;
+      inset: 0;
+      z-index: 60;
+      opacity: 0;
+      pointer-events: none;
+      background: #000000;
+    }
+  </style>
+
+  <div id="root" data-composition-id="tour" data-width="1920" data-height="1080">
+    <div class="stage" data-layout-allow-overflow>
+      <img id="court" src="assets/brand/bulls-bg.png" alt="">
+      <div class="court-grade"></div>
+      <div class="beam" data-layout-ignore></div>
+      <div class="halftone" data-layout-ignore></div>
+      <div class="ring" data-layout-ignore></div>
+      <div class="ring-small" data-layout-ignore></div>
+      <div class="phone-halo" data-layout-ignore></div>
+      <div class="shockwave" id="shockwave" data-layout-ignore></div>
+
+      <div class="brand-rail" id="brand-rail">
+        <img src="assets/brand/play-maker-mark.svg" alt="">
+        <span class="brand-word">PLAY-MAKER</span>
+        <span class="brand-meta">Chicago vs Utah</span>
+      </div>
+
+      <div class="scorebug" id="scorebug">
+        <span class="score-live"><i></i>FINAL</span>
+        <span class="score-team">CHI</span>
+        <span class="score-num hot">90</span>
+        <span class="score-team">UTA</span>
+        <span class="score-num">86</span>
+        <span class="score-q">Q4 00:00</span>
+      </div>
+
+      <div class="copy" id="copy1">
+        <div class="kicker">
+          <span class="num">01</span>
+          <span class="rule"></span>
+          <span>Home</span>
+        </div>
+        <h1>
+          <span class="line"><span class="word">Every</span> <span class="word">possession,</span></span>
+          <span class="line"><em class="word accent">counted.</em></span>
+        </h1>
+        <p class="body">Points, fouls, rebounds, live.</p>
+      </div>
+
+      <div class="copy" id="copy2">
+        <div class="kicker">
+          <span class="num">02</span>
+          <span class="rule"></span>
+          <span>Resumen</span>
+        </div>
+        <h1>
+          <span class="line"><span class="word">The</span> <span class="word">whole</span> <span class="word">game,</span></span>
+          <span class="line"><em class="word accent">by the numbers.</em></span>
+        </h1>
+        <p class="body">Every player, every stat.</p>
+        <div class="stat-row">
+          <div class="stat"><b>39</b><span>Jordan PTS</span></div>
+          <div class="stat"><b>23</b><span>Pippen PTS</span></div>
+          <div class="stat"><b>+4</b><span>Bulls lead</span></div>
+        </div>
+      </div>
+
+      <div class="copy" id="copy3">
+        <div class="kicker">
+          <span class="num">03</span>
+          <span class="rule"></span>
+          <span>Roster</span>
+        </div>
+        <h1>
+          <span class="line"><span class="word">Know</span> <span class="word">every</span></span>
+          <span class="line"><em class="word accent">player.</em></span>
+        </h1>
+        <p class="body">Edit names, numbers and rosters.</p>
+      </div>
+
+      <div class="copy" id="copy4">
+        <div class="kicker">
+          <span class="num">04</span>
+          <span class="rule"></span>
+          <span>Cambios</span>
+        </div>
+        <h1>
+          <span class="line"><span class="word">Subs</span> <span class="word">in</span></span>
+          <span class="line"><em class="word accent">one tap.</em></span>
+        </h1>
+        <p class="body">Bench to court, instantly.</p>
+      </div>
+
+      <div class="phone-wrap" id="phone-wrap">
+        <div class="phone" data-layout-allow-overflow>
+          <div class="phone-screen">
+            <div class="status-bar" data-layout-ignore>
+              <span class="sb-time">9:41</span>
+              <span class="sb-icons">
+                <span class="sb-signal"><i></i><i></i><i></i><i></i></span>
+                <svg class="sb-wifi" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+                  <path d="M1 3.1C4.9-0.5 11.1-0.5 15 3.1M3.4 6.1C5.9 3.9 10.1 3.9 12.6 6.1M6 8.7C7.2 7.6 8.8 7.6 10 8.7" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="8" cy="10.6" r="1.1" fill="#FFFFFF"/>
+                </svg>
+                <span class="sb-battery"><i></i></span>
+              </span>
+            </div>
+            <div class="app-area">
+              <div class="screen-layer" id="s-home">
+                <img src="assets/screens/home-bulls.png" alt="Play-Maker home screen">
+              </div>
+              <div class="screen-layer" id="s-resumen">
+                <img src="assets/screens/resumen-bulls.png" alt="Play-Maker game summary screen">
+              </div>
+              <div class="screen-layer" id="s-editar">
+                <img src="assets/screens/editar-equipos-bulls.png" alt="Play-Maker edit teams screen">
+              </div>
+              <div class="screen-layer" id="s-cambios">
+                <img src="assets/screens/cambios-bulls.png" alt="Play-Maker substitutions screen">
+              </div>
+              <div class="chrome-mask-top"></div>
+              <div class="browser-footer">
+                <div class="url-pill"><span class="url-lock"></span>play-maker.dalejorrodriguez.workers.dev</div>
+                <div class="home-indicator"></div>
+              </div>
+              <div class="screen-sweep" id="screen-sweep"></div>
+              <div class="screen-glare"></div>
+              <div class="tap-ring" id="tap-ring"></div>
+            </div>
+          </div>
+          <div class="dynamic-island"></div>
+          <span class="side-button vol-up"></span>
+          <span class="side-button vol-down"></span>
+          <span class="side-button vol-down-2"></span>
+          <span class="side-button power"></span>
+        </div>
+      </div>
+
+      <div class="deck" id="deck" data-layout-allow-overflow data-layout-allow-overlap>
+        <div class="deck-card" id="deck1">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="status-bar" data-layout-ignore>
+                <span class="sb-time">9:41</span>
+                <span class="sb-icons">
+                  <span class="sb-signal"><i></i><i></i><i></i><i></i></span>
+                  <svg class="sb-wifi" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+                    <path d="M1 3.1C4.9-0.5 11.1-0.5 15 3.1M3.4 6.1C5.9 3.9 10.1 3.9 12.6 6.1M6 8.7C7.2 7.6 8.8 7.6 10 8.7" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="8" cy="10.6" r="1.1" fill="#FFFFFF"/>
+                  </svg>
+                  <span class="sb-battery"><i></i></span>
+                </span>
+              </div>
+              <div class="app-area">
+                <div class="screen-layer" style="opacity:1">
+                  <img src="assets/screens/home-card-bulls.png" alt="">
+                </div>
+                <div class="chrome-mask-top"></div>
+                <div class="browser-footer"><div class="home-indicator"></div></div>
+                <div class="screen-glare"></div>
+              </div>
+            </div>
+            <div class="dynamic-island"></div>
+          </div>
+        </div>
+
+        <div class="deck-card" id="deck2">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="status-bar" data-layout-ignore>
+                <span class="sb-time">9:41</span>
+                <span class="sb-icons">
+                  <span class="sb-signal"><i></i><i></i><i></i><i></i></span>
+                  <svg class="sb-wifi" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+                    <path d="M1 3.1C4.9-0.5 11.1-0.5 15 3.1M3.4 6.1C5.9 3.9 10.1 3.9 12.6 6.1M6 8.7C7.2 7.6 8.8 7.6 10 8.7" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="8" cy="10.6" r="1.1" fill="#FFFFFF"/>
+                  </svg>
+                  <span class="sb-battery"><i></i></span>
+                </span>
+              </div>
+              <div class="app-area">
+                <div class="screen-layer" style="opacity:1">
+                  <img src="assets/screens/resumen-card-bulls.png" alt="">
+                </div>
+                <div class="chrome-mask-top"></div>
+                <div class="browser-footer"><div class="home-indicator"></div></div>
+                <div class="screen-glare"></div>
+              </div>
+            </div>
+            <div class="dynamic-island"></div>
+          </div>
+        </div>
+
+        <div class="deck-card" id="deck3">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="status-bar" data-layout-ignore>
+                <span class="sb-time">9:41</span>
+                <span class="sb-icons">
+                  <span class="sb-signal"><i></i><i></i><i></i><i></i></span>
+                  <svg class="sb-wifi" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+                    <path d="M1 3.1C4.9-0.5 11.1-0.5 15 3.1M3.4 6.1C5.9 3.9 10.1 3.9 12.6 6.1M6 8.7C7.2 7.6 8.8 7.6 10 8.7" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="8" cy="10.6" r="1.1" fill="#FFFFFF"/>
+                  </svg>
+                  <span class="sb-battery"><i></i></span>
+                </span>
+              </div>
+              <div class="app-area">
+                <div class="screen-layer" style="opacity:1">
+                  <img src="assets/screens/editar-card-bulls.png" alt="">
+                </div>
+                <div class="chrome-mask-top"></div>
+                <div class="browser-footer"><div class="home-indicator"></div></div>
+                <div class="screen-glare"></div>
+              </div>
+            </div>
+            <div class="dynamic-island"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="end-wash" id="end-wash"></div>
+
+      <div class="end-copy" id="end-copy">
+        <div class="end-brand" id="end-brand">
+          <img src="assets/brand/play-maker-mark-end.svg" alt="Play-Maker logo">
+          <span>PLAY-MAKER</span>
+        </div>
+        <h2 class="end-title" id="end-title">
+          <span class="line"><span class="word">Call</span> <span class="word">your</span></span>
+          <span class="line"><em class="word accent">next game.</em></span>
+        </h2>
+        <p class="end-sub" id="end-sub">Live score · Box score · Roster · Rotations</p>
+        <div class="end-cta" id="end-cta">
+          <span>Try it free.</span>
+          <span class="cta-arrow">→</span>
+        </div>
+      </div>
+
+      <div class="end-url" id="end-url">play-maker.dalejorrodriguez.workers.dev</div>
+
+      <div class="streak"></div>
+      <div class="streak"></div>
+      <div class="streak"></div>
+      <div class="streak"></div>
+      <div class="streak"></div>
+      <div class="streak"></div>
+      <div class="streak"></div>
+      <div class="streak"></div>
+      <div class="cut-flash" id="cut-flash"></div>
+
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+
+      <div class="vignette" data-layout-ignore></div>
+      <div class="end-fade" id="end-fade" data-layout-ignore></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var tl = gsap.timeline({ paused: true });
+
+      gsap.set('#phone-wrap', { transformPerspective: 1400, transformStyle: 'preserve-3d' });
+      gsap.set('#deck1, #deck2, #deck3', { xPercent: -50, yPercent: -50, opacity: 0 });
+      gsap.set('#end-copy, #end-cta, #end-url, #end-brand', { opacity: 0 });
+      gsap.set('#tap-ring', { opacity: 0, scale: 0.4 });
+
+      function copyIn(selector, at) {
+        tl.fromTo(selector + ' .kicker',
+          { opacity: 0, x: -18 },
+          { opacity: 1, x: 0, duration: 0.48, ease: 'power3.out', immediateRender: false },
+          at
+        );
+        tl.fromTo(selector + ' .word',
+          { opacity: 0, y: 18, filter: 'blur(9px)' },
+          { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.5, stagger: 0.055, ease: 'power3.out', immediateRender: false },
+          at + 0.08
+        );
+        tl.fromTo(selector + ' .body',
+          { opacity: 0, y: 18 },
+          { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', immediateRender: false },
+          at + 0.36
+        );
+        if (selector === '#copy2') {
+          tl.fromTo(selector + ' .stat',
+            { opacity: 0, y: 18, scale: 0.96 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.46, stagger: 0.08, ease: 'back.out(1.5)', immediateRender: false },
+            at + 0.5
+          );
+        }
+      }
+
+      function copyOut(selector, at) {
+        tl.to(selector + ' .kicker',
+          { opacity: 0, y: -8, filter: 'blur(4px)', duration: 0.2, ease: 'power2.in' },
+          at
+        );
+        tl.to(selector + ' .word',
+          { opacity: 0, y: -12, filter: 'blur(7px)', duration: 0.2, stagger: 0.012, ease: 'power2.in' },
+          at
+        );
+        tl.to(selector + ' .body',
+          { opacity: 0, y: -8, filter: 'blur(4px)', duration: 0.18, ease: 'power2.in' },
+          at + 0.03
+        );
+        if (selector === '#copy2') {
+          tl.to(selector + ' .stat',
+            { opacity: 0, y: -10, duration: 0.18, stagger: 0.02, ease: 'power2.in' },
+            at + 0.02
+          );
+        }
+      }
+
+      function cutFx(at) {
+        tl.fromTo('.streak',
+          { xPercent: -160, scaleX: 0.25, opacity: 0 },
+          { xPercent: 160, scaleX: 1, opacity: 0.82, duration: 0.34, stagger: 0.014, ease: 'power2.inOut', immediateRender: false },
+          at - 0.08
+        );
+        tl.to('.streak', { opacity: 0, duration: 0.14 }, at + 0.24);
+        tl.fromTo('#cut-flash',
+          { opacity: 0 },
+          { opacity: 0.26, duration: 0.05, ease: 'power1.out', immediateRender: false },
+          at
+        );
+        tl.to('#cut-flash', { opacity: 0, duration: 0.2, ease: 'power2.out' }, at + 0.05);
+        tl.fromTo('#shockwave',
+          { opacity: 0, scale: 0.42 },
+          { opacity: 0.74, scale: 1.55, duration: 0.62, ease: 'expo.out', immediateRender: false },
+          at - 0.02
+        );
+        tl.to('#shockwave', { opacity: 0, duration: 0.2 }, at + 0.44);
+      }
+
+      function screenSwap(outSelector, inSelector, at) {
+        tl.to(outSelector,
+          { opacity: 0, scale: 1.03, filter: 'blur(6px)', duration: 0.24, ease: 'power2.in' },
+          at - 0.16
+        );
+        tl.fromTo(inSelector,
+          { opacity: 0, scale: 0.98, filter: 'blur(6px)' },
+          { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.4, ease: 'power3.out', immediateRender: false },
+          at - 0.03
+        );
+        tl.fromTo('#screen-sweep',
+          { xPercent: -120, opacity: 0 },
+          { xPercent: 280, opacity: 0.82, duration: 0.28, ease: 'power2.inOut', immediateRender: false },
+          at - 0.07
+        );
+        tl.to('#screen-sweep', { opacity: 0, duration: 0.12 }, at + 0.22);
+      }
+
+      tl.fromTo('#court',
+        { scale: 1.06, opacity: 0 },
+        { scale: 1.16, opacity: 0.26, duration: 24, ease: 'none' },
+        0
+      );
+
+      tl.fromTo('.court-grade', { opacity: 0 }, { opacity: 1, duration: 1.3, ease: 'power2.out' }, 0);
+      tl.fromTo('.beam', { opacity: 0, scale: 0.9 }, { opacity: 0.86, scale: 1, duration: 1.8, ease: 'power3.out' }, 0.1);
+      tl.fromTo('.halftone', { opacity: 0 }, { opacity: 1, duration: 1.4, ease: 'power2.out' }, 0.2);
+
+      tl.fromTo('.ring',
+        { opacity: 0, scale: 0.92, rotation: 0 },
+        { opacity: 1, scale: 1, rotation: 22, duration: 24, ease: 'none' },
+        0.1
+      );
+
+      tl.fromTo('.ring-small',
+        { opacity: 0, scale: 0.9 },
+        { opacity: 1, scale: 1, duration: 2, ease: 'power3.out' },
+        0.3
+      );
+
+      tl.fromTo('.phone-halo',
+        { opacity: 0, scale: 0.76 },
+        { opacity: 1, scale: 1, duration: 1.5, ease: 'power3.out' },
+        0.2
+      );
+
+      tl.fromTo('#brand-rail',
+        { opacity: 0, y: -12 },
+        { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
+        0.3
+      );
+
+      tl.fromTo('#scorebug',
+        { opacity: 0, y: -14 },
+        { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' },
+        0.45
+      );
+
+      tl.fromTo('#phone-wrap',
+        { opacity: 1, y: 84, scale: 1.02, rotation: 1.4, rotationY: -10, xPercent: -50, yPercent: -50 },
+        { opacity: 1, y: 0, scale: 1.1, rotation: 0, rotationY: 0, xPercent: -50, yPercent: -50, duration: 1.2, ease: 'expo.out' },
+        0
+      );
+
+      copyIn('#copy1', 0.55);
+
+      tl.to('#phone-wrap',
+        { scale: 1.12, y: -5, rotation: -0.5, duration: 1.6, ease: 'sine.inOut' },
+        1.3
+      );
+
+      copyOut('#copy1', 4.38);
+      tl.to('#phone-wrap',
+        { rotationY: -18, x: -10, scale: 1.07, rotation: -1.2, duration: 0.24, ease: 'power2.in' },
+        4.66
+      );
+      cutFx(4.95);
+      screenSwap('#s-home', '#s-resumen', 4.95);
+      tl.to('#phone-wrap',
+        { rotationY: 0, x: 0, scale: 1.11, rotation: 0.4, y: -4, duration: 0.55, ease: 'back.out(1.45)' },
+        5.03
+      );
+      copyIn('#copy2', 5.02);
+
+      tl.to('#phone-wrap',
+        { scale: 1.13, y: 3, rotation: -0.35, duration: 1.4, ease: 'sine.inOut' },
+        6.6
+      );
+
+      copyOut('#copy2', 9.24);
+      tl.to('#phone-wrap',
+        { rotationY: 16, y: 8, scale: 1.07, rotation: 1.0, duration: 0.24, ease: 'power2.in' },
+        9.4
+      );
+      cutFx(9.7);
+      screenSwap('#s-resumen', '#s-editar', 9.7);
+      tl.to('#phone-wrap',
+        { rotationY: 0, scale: 1.1, rotation: -0.4, y: 0, duration: 0.55, ease: 'back.out(1.45)' },
+        9.78
+      );
+      copyIn('#copy3', 9.78);
+
+      tl.to('#phone-wrap',
+        { scale: 1.12, y: -3, rotation: 0.45, duration: 1.2, ease: 'sine.inOut' },
+        10.9
+      );
+
+      copyOut('#copy3', 12.24);
+      tl.to('#phone-wrap',
+        { rotationY: -12, x: 12, scale: 1.06, rotation: -0.8, duration: 0.24, ease: 'power2.in' },
+        12.4
+      );
+      cutFx(12.7);
+      screenSwap('#s-editar', '#s-cambios', 12.7);
+      tl.to('#phone-wrap',
+        { rotationY: 0, x: 0, scale: 1.13, rotation: 0.6, y: 2, duration: 0.55, ease: 'back.out(1.45)' },
+        12.78
+      );
+      copyIn('#copy4', 12.78);
+
+      tl.fromTo('#tap-ring',
+        { opacity: 0, scale: 0.32 },
+        { opacity: 0.95, scale: 0.66, duration: 0.22, ease: 'power2.out' },
+        13.35
+      );
+      tl.to('#tap-ring', { opacity: 0, scale: 1.9, duration: 0.52, ease: 'power2.out' }, 13.58);
+      tl.fromTo('#tap-ring',
+        { opacity: 0, scale: 0.4 },
+        { opacity: 0.78, scale: 0.72, duration: 0.2, immediateRender: false },
+        14.2
+      );
+      tl.to('#tap-ring', { opacity: 0, scale: 1.65, duration: 0.6, ease: 'power2.out' }, 14.46);
+
+      tl.to('#phone-wrap',
+        { scale: 1.15, y: 6, rotation: -0.25, duration: 1.2, ease: 'sine.inOut' },
+        14.4
+      );
+
+      copyOut('#copy4', 17.28);
+      tl.to('#brand-rail, #scorebug',
+        { opacity: 0, y: -10, duration: 0.4, ease: 'power2.in' },
+        17.5
+      );
+
+      cutFx(17.62);
+      tl.to('.end-wash',
+        { opacity: 1, duration: 0.8, ease: 'power2.out' },
+        17.55
+      );
+
+      tl.to('#phone-wrap',
+        { x: 80, y: 105, scale: 0.42, rotation: 7, rotationY: 0, duration: 0.85, ease: 'power3.inOut' },
+        17.55
+      );
+
+      tl.set('.end-copy', { opacity: 1 }, 17.7);
+
+      tl.fromTo('#end-brand',
+        { opacity: 0, y: -14 },
+        { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', immediateRender: false },
+        17.78
+      );
+
+      tl.fromTo('#end-title .word',
+        { opacity: 0, y: 20, filter: 'blur(10px)' },
+        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.58, stagger: 0.08, ease: 'power3.out', immediateRender: false },
+        18.0
+      );
+
+      tl.fromTo('#deck1',
+        { opacity: 0, x: 500, y: 30, scale: 0.24, rotation: 12, xPercent: -50, yPercent: -50 },
+        { opacity: 1, x: 0, y: 0, scale: 0.43, rotation: -9, xPercent: -50, yPercent: -50, duration: 0.78, ease: 'power3.out', immediateRender: false },
+        17.86
+      );
+
+      tl.fromTo('#deck2',
+        { opacity: 0, x: 350, y: 30, scale: 0.24, rotation: 12, xPercent: -50, yPercent: -50 },
+        { opacity: 1, x: 0, y: 0, scale: 0.43, rotation: -3, xPercent: -50, yPercent: -50, duration: 0.78, ease: 'power3.out', immediateRender: false },
+        17.95
+      );
+
+      tl.fromTo('#deck3',
+        { opacity: 0, x: 200, y: 30, scale: 0.24, rotation: 12, xPercent: -50, yPercent: -50 },
+        { opacity: 1, x: 0, y: 0, scale: 0.43, rotation: 3, xPercent: -50, yPercent: -50, duration: 0.78, ease: 'power3.out', immediateRender: false },
+        18.04
+      );
+
+      tl.fromTo('#end-sub',
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', immediateRender: false },
+        18.36
+      );
+
+      tl.fromTo('#end-cta',
+        { opacity: 0, y: 16, scale: 0.94 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.56, ease: 'back.out(1.8)', immediateRender: false },
+        18.55
+      );
+
+      tl.fromTo('#end-cta',
+        { boxShadow: '0 20px 48px rgba(206, 17, 65, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.18)' },
+        { boxShadow: '0 0 0 24px rgba(206, 17, 65, 0), 0 20px 48px rgba(206, 17, 65, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.18)', duration: 0.8, ease: 'power2.out', immediateRender: false },
+        18.65
+      );
+
+      tl.fromTo('#end-url',
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', immediateRender: false },
+        18.85
+      );
+
+      tl.fromTo('.spark',
+        { opacity: 0, scale: 0, x: 0, y: 0 },
+        { opacity: 0.9, scale: 1, duration: 0.2, stagger: 0.025, ease: 'power2.out', immediateRender: false },
+        18.2
+      );
+      tl.to('.spark',
+        { opacity: 0, y: -36, x: function (i) { return (i % 2 === 0 ? 1 : -1) * (18 + i * 3); }, duration: 0.8, stagger: 0.02, ease: 'power2.out' },
+        18.45
+      );
+
+      tl.to('#end-fade',
+        { opacity: 1, duration: 0.65, ease: 'power2.inOut' },
+        23.35
+      );
+
+      window.__timelines['tour'] = tl;
+    })();
+  </script>
+</template>
