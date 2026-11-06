@@ -1,0 +1,298 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 2,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "duplicate_media_discovery_risk",
+        "severity": "warning",
+        "message": "Detected 2 matching img entries with the same source/start/duration.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/compositions/tour.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Avoid duplicated media nodes that can be discovered twice during compilation."
+      },
+      {
+        "code": "composition_file_too_large",
+        "severity": "warning",
+        "message": "This HTML composition file has 614 lines. Smaller sub-compositions are easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/danielalejorodriguez/Documents/Github/play-maker/play-maker-hyperframes-video/compositions/tour.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Split this sub-composition further into smaller .html files, then mount them from the parent with data-composition-src so each file stays small enough to inspect, revise, and validate independently."
+      }
+    ],
+    "filesScanned": 2
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "duration": 24,
+    "samples": [
+      1.333,
+      4,
+      6.667,
+      9.333,
+      12,
+      14.667,
+      17.333,
+      20,
+      22.667
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 0,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      1.333,
+      6.667,
+      12,
+      17.333,
+      22.667
+    ],
+    "checked": 75,
+    "passed": 75
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 18 text elements stay under it for 0.5 s or more, the smallest \"play-maker.dalejorrodriguez.workers.dev\" at 5 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "play-maker.dalejorrodriguez.workers.dev",
+        "selector": "div.url-pill",
+        "dataAttributes": {},
+        "sourceFile": "compositions/tour.html",
+        "bbox": {
+          "x": 1567.77,
+          "y": 961.5,
+          "width": 198.91,
+          "height": 22.22
+        },
+        "time": 0,
+        "times": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0.5,
+          0.5,
+          0.625,
+          0.625,
+          0.625,
+          0.625,
+          5.625,
+          5.75,
+          5.875,
+          18.5,
+          19
+        ],
+        "fontPx": 5.04,
+        "floorPx": 28,
+        "seconds": 24,
+        "elements": [
+          {
+            "selector": "div.url-pill",
+            "text": "play-maker.dalejorrodriguez.workers.dev",
+            "fontPx": 5.04,
+            "time": 0,
+            "seconds": 24
+          },
+          {
+            "selector": "div.stat-row > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "Jordan PTS",
+            "fontPx": 10.83,
+            "time": 5.625,
+            "seconds": 3.875
+          },
+          {
+            "selector": "div.stat-row > div:nth-of-type(2) > span:nth-of-type(1)",
+            "text": "Pippen PTS",
+            "fontPx": 10.94,
+            "time": 5.75,
+            "seconds": 3.75
+          },
+          {
+            "selector": "span.score-q",
+            "text": "Q4 00:00",
+            "fontPx": 11,
+            "time": 0.625,
+            "seconds": 17.25
+          },
+          {
+            "selector": "div.stat-row > div:nth-of-type(3) > span:nth-of-type(1)",
+            "text": "Bulls lead",
+            "fontPx": 11,
+            "time": 5.875,
+            "seconds": 3.625
+          },
+          {
+            "selector": "span.score-live",
+            "text": "FINAL",
+            "fontPx": 12,
+            "time": 0.625,
+            "seconds": 17.25
+          },
+          {
+            "selector": "span.brand-meta",
+            "text": "Chicago vs Utah",
+            "fontPx": 13,
+            "time": 0.5,
+            "seconds": 17.375
+          },
+          {
+            "selector": "div.open-final > small:nth-of-type(1)",
+            "text": "Q4 · 00:00",
+            "fontPx": 14,
+            "time": 0,
+            "seconds": 1.25
+          },
+          {
+            "selector": "div.open-final > span:nth-of-type(1)",
+            "text": "FINAL",
+            "fontPx": 18,
+            "time": 0,
+            "seconds": 1.25
+          },
+          {
+            "selector": "div.open-topline > span:nth-of-type(1)",
+            "text": "Chicago",
+            "fontPx": 19,
+            "time": 0,
+            "seconds": 1.125
+          },
+          {
+            "selector": "div.open-topline > span:nth-of-type(2)",
+            "text": "Utah",
+            "fontPx": 19,
+            "time": 0,
+            "seconds": 1.125
+          },
+          {
+            "selector": "#end-url",
+            "text": "play-maker.dalejorrodriguez.workers.dev",
+            "fontPx": 19,
+            "time": 19,
+            "seconds": 5
+          },
+          {
+            "selector": "div.open-caption",
+            "text": "THE GAME, IN YOUR POCKET.",
+            "fontPx": 23,
+            "time": 0,
+            "seconds": 1.25
+          },
+          {
+            "selector": "div.open-topline > i:nth-of-type(1)",
+            "text": "vs",
+            "fontPx": 24,
+            "time": 0,
+            "seconds": 1.125
+          },
+          {
+            "selector": "span.brand-word",
+            "text": "PLAY-MAKER",
+            "fontPx": 24,
+            "time": 0.5,
+            "seconds": 17.375
+          },
+          {
+            "selector": "#scorebug > span:nth-of-type(2)",
+            "text": "CHI",
+            "fontPx": 25,
+            "time": 0.625,
+            "seconds": 17.25
+          },
+          {
+            "selector": "#scorebug > span:nth-of-type(4)",
+            "text": "UTA",
+            "fontPx": 25,
+            "time": 0.625,
+            "seconds": 17.25
+          },
+          {
+            "selector": "#end-sub",
+            "text": "Live score · Box score · Roster · Rotations",
+            "fontPx": 25,
+            "time": 18.5,
+            "seconds": 5.5
+          }
+        ]
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 192
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}
